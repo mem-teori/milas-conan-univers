@@ -1,0 +1,43 @@
+{
+  "rules": {
+    ".read": false,
+    ".write": false,
+    "rooms": {
+      "$room": {
+        ".write": "auth != null && ((!data.exists() && newData.child('meta/hostUid').val() === auth.uid && newData.child('meta/expiresAt').val() > now && newData.child('meta/expiresAt').val() <= now + 86400000) || (data.child('meta/hostUid').val() === auth.uid))",
+        "meta": {
+          ".read": "auth != null && data.child('expiresAt').val() > now"
+        },
+        "publicQuestion": {
+          ".read": "auth != null && root.child('rooms').child($room).child('meta/expiresAt').val() > now"
+        },
+        "reveal": {
+          ".read": "auth != null && root.child('rooms').child($room).child('meta/expiresAt').val() > now"
+        },
+        "players": {
+          ".read": "auth != null && root.child('rooms').child($room).child('meta/expiresAt').val() > now",
+          "$uid": {
+            ".write": "auth != null && root.child('rooms').child($room).child('meta/expiresAt').val() > now && (root.child('rooms').child($room).child('meta/hostUid').val() === auth.uid || (auth.uid === $uid && ((!data.exists() && newData.child('score').val() === 0 && newData.child('name').isString() && newData.child('name').val().length > 0 && newData.child('name').val().length <= 24) || !newData.exists())))",
+            ".validate": "!newData.exists() || (newData.hasChildren(['name','score','joinedAt']) && newData.child('name').isString() && newData.child('score').isNumber() && newData.child('score').val() >= 0)"
+          }
+        },
+        "answers": {
+          "$question": {
+            ".read": "auth != null && root.child('rooms').child($room).child('meta/hostUid').val() === auth.uid",
+            "$uid": {
+              ".read": "auth != null && (auth.uid === $uid || root.child('rooms').child($room).child('meta/hostUid').val() === auth.uid)",
+              ".write": "auth != null && auth.uid === $uid && !data.exists() && root.child('rooms').child($room).child('meta/status').val() === 'question' && root.child('rooms').child($room).child('meta/currentQuestion').val()+'' === $question && root.child('rooms').child($room).child('meta/expiresAt').val() > now",
+              ".validate": "newData.hasChildren(['choice','answeredAt']) && newData.child('choice').isNumber() && newData.child('choice').val() >= 0 && newData.child('choice').val() <= 3"
+            }
+          }
+        },
+        "scored": {
+          ".read": "auth != null && root.child('rooms').child($room).child('meta/hostUid').val() === auth.uid"
+        },
+        "scoreLedger": {
+          ".read": "auth != null && root.child('rooms').child($room).child('meta/hostUid').val() === auth.uid"
+        }
+      }
+    }
+  }
+}

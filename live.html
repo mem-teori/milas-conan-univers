@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17131f">
+  <title>Conan Live Quiz · Milas univers</title>
+  <link rel="stylesheet" href="live.css">
+</head>
+<body>
+  <header class="live-header">
+    <a href="index.html#quiz" class="back-link">← Til Milas Conan-univers</a>
+    <div class="live-brand">
+      <span class="brand-star">★</span>
+      <div>
+        <strong>CONAN LIVE QUIZ</strong>
+        <small>Milas fødselsdagsudgave</small>
+      </div>
+    </div>
+    <span id="connectionBadge" class="connection-badge">Forbinder…</span>
+  </header>
+
+  <main class="live-main">
+    <section id="loadingView" class="view active centered">
+      <div class="spinner"></div>
+      <h1>Conan gør scenen klar…</h1>
+      <p>Forbinder til quizrummet.</p>
+    </section>
+
+    <section id="setupView" class="view centered">
+      <div class="setup-card">
+        <span class="kicker">FIREBASE MANGLER</span>
+        <h1>Livequizzen er bygget — den skal bare have sin forbindelse</h1>
+        <p>
+          Indsæt projektets Firebase-konfiguration i <code>firebase-config.js</code>,
+          aktivér anonym login og læg reglerne fra <code>database.rules.json</code> ind.
+        </p>
+        <ol>
+          <li>Opret et gratis Firebase-projekt.</li>
+          <li>Aktivér Authentication → Anonymous.</li>
+          <li>Opret Realtime Database i låst tilstand.</li>
+          <li>Indsæt konfigurationen og sikkerhedsreglerne.</li>
+        </ol>
+        <a class="primary-link" href="OPSÆTNING_FIREBASE_OG_GITHUB.md">Åbn hele vejledningen</a>
+      </div>
+    </section>
+
+    <section id="landingView" class="view">
+      <div class="landing-copy">
+        <span class="kicker">KAHOOT-LIGNENDE LIVEQUIZ</span>
+        <h1>Er du vært — eller er du med i quizzen?</h1>
+        <p>
+          Værten styrer spørgsmål og facit. Veninderne åbner invitationslinket,
+          vælger et kaldenavn og svarer fra hver sin telefon.
+        </p>
+      </div>
+
+      <div class="choice-grid">
+        <article class="choice-card host-choice">
+          <div class="host-avatar" aria-hidden="true">
+            <div class="host-hair"></div>
+            <div class="host-face">CG</div>
+          </div>
+          <span class="choice-number">01</span>
+          <h2>Jeg er quizvært</h2>
+          <p>Opret et rum, del linket og lad den illustrerede Conan-vært styre aftenen.</p>
+          <label>
+            Værtens navn
+            <input id="hostNameInput" maxlength="24" value="Mila" autocomplete="nickname">
+          </label>
+          <button id="createRoomButton" class="primary-button">Opret quizrum</button>
+        </article>
+
+        <article class="choice-card">
+          <span class="choice-number">02</span>
+          <h2>Jeg vil deltage</h2>
+          <p>Skriv rumkoden fra hovedskærmen og vælg et kaldenavn. Ingen e-mail eller konto.</p>
+          <label>
+            Rumkode
+            <input id="roomCodeInput" maxlength="10" placeholder="FX KROW7M2P" autocapitalize="characters">
+          </label>
+          <label>
+            Kaldenavn
+            <input id="playerNameInput" maxlength="24" placeholder="Fx Freja" autocomplete="nickname">
+          </label>
+          <button id="joinRoomButton" class="secondary-button">Gå ind i rummet</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="hostView" class="view">
+      <div class="host-layout">
+        <aside class="conan-panel">
+          <span class="kicker pale">QUIZVÆRT</span>
+          <div class="conan-portrait" aria-hidden="true">
+            <div class="portrait-hair"></div>
+            <div class="portrait-face">
+              <span></span><span></span>
+            </div>
+            <div class="portrait-shirt"></div>
+          </div>
+          <h2>Conan</h2>
+          <blockquote id="hostQuote">“Vi venter bare på resten af dramatikken.”</blockquote>
+          <small>Illustreret fanvært · ingen stemmekloning</small>
+        </aside>
+
+        <div class="stage-panel">
+          <div class="stage-top">
+            <div>
+              <span class="kicker">DIT QUIZRUM</span>
+              <h1 id="hostRoomCode">—</h1>
+            </div>
+            <div class="host-actions">
+              <button id="copyInviteButton" class="small-button">Kopiér invitation</button>
+              <button id="closeRoomButton" class="danger-button">Luk og slet rum</button>
+            </div>
+          </div>
+
+          <div id="hostLobbyPanel" class="host-state active">
+            <div class="invite-box">
+              <span>VENINDERNE KAN ÅBNE</span>
+              <strong id="inviteUrl">—</strong>
+            </div>
+            <div class="lobby-header">
+              <div>
+                <h2>Venteværelse</h2>
+                <p>Start, når alle kaldenavne er dukket op.</p>
+              </div>
+              <span id="hostPlayerCount" class="count-pill">0 deltagere</span>
+            </div>
+            <div id="hostPlayerList" class="people-grid"></div>
+            <button id="startLiveQuizButton" class="primary-button full-width" disabled>Start første spørgsmål</button>
+          </div>
+
+          <div id="hostQuestionPanel" class="host-state">
+            <div class="question-topline">
+              <span id="hostQuestionNumber">Spørgsmål 1</span>
+              <span id="hostTimer" class="timer">20</span>
+            </div>
+            <h2 id="hostQuestionText">—</h2>
+            <div id="hostAnswerOptions" class="answer-preview"></div>
+            <div class="answer-progress">
+              <div>
+                <strong id="answerCount">0</strong>
+                <span>har svaret</span>
+              </div>
+              <div class="progress-track"><span id="answerProgressBar"></span></div>
+            </div>
+            <button id="revealNowButton" class="secondary-button full-width">Vis facit nu</button>
+          </div>
+
+          <div id="hostRevealPanel" class="host-state">
+            <span class="kicker">FACIT</span>
+            <h2 id="hostRevealTitle">—</h2>
+            <p id="hostExplanation">—</p>
+            <div id="hostMiniLeaderboard" class="leaderboard"></div>
+            <button id="nextLiveQuestionButton" class="primary-button full-width">Næste spørgsmål</button>
+          </div>
+
+          <div id="hostFinishedPanel" class="host-state">
+            <span class="kicker">SLUTSTILLING</span>
+            <h2>Quizzen er slut!</h2>
+            <div id="hostFinalLeaderboard" class="leaderboard big"></div>
+            <div class="finish-actions">
+              <button id="playAgainButton" class="primary-button">Spil igen</button>
+              <button id="finishDeleteButton" class="danger-button">Slet rummet</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="playerView" class="view centered">
+      <div class="player-card">
+        <div class="player-top">
+          <div>
+            <span class="kicker">RUM <b id="playerRoomCode">—</b></span>
+            <h1 id="playerGreeting">Hej!</h1>
+          </div>
+          <button id="leaveRoomButton" class="small-button">Forlad rum</button>
+        </div>
+
+        <div id="playerLobbyState" class="player-state active">
+          <div class="pulse-star">★</div>
+          <h2>Du er med!</h2>
+          <p>Quizværten starter, når alle er klar.</p>
+          <div id="playerLobbyNames" class="people-grid compact-grid"></div>
+        </div>
+
+        <div id="playerQuestionState" class="player-state">
+          <div class="question-topline">
+            <span id="playerQuestionNumber">Spørgsmål 1</span>
+            <span id="playerTimer" class="timer">20</span>
+          </div>
+          <h2 id="playerQuestionText">—</h2>
+          <div id="playerAnswerGrid" class="answer-grid"></div>
+          <p id="answerStatus" class="answer-status"></p>
+        </div>
+
+        <div id="playerRevealState" class="player-state">
+          <div id="resultMark" class="result-mark">★</div>
+          <h2 id="playerResultTitle">—</h2>
+          <p id="playerResultExplanation">—</p>
+          <div class="score-card">
+            <span>DIN SCORE</span>
+            <strong id="playerScore">0</strong>
+          </div>
+          <p>Venter på næste spørgsmål…</p>
+        </div>
+
+        <div id="playerFinishedState" class="player-state">
+          <span class="kicker">SLUTSTILLING</span>
+          <h2>Tak for kampen!</h2>
+          <div id="playerFinalLeaderboard" class="leaderboard"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="errorView" class="view centered">
+      <div class="error-card">
+        <span>!</span>
+        <h1>Det lykkedes ikke</h1>
+        <p id="errorMessage">Der opstod en fejl.</p>
+        <button id="backToStartButton" class="primary-button">Tilbage til start</button>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="live.js"></script>
+</body>
+</html>

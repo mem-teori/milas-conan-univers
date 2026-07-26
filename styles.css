@@ -707,3 +707,10 @@ footer {
   }
   .print-item { break-inside: avoid; }
 }
+
+.live-launch {
+  display: block;
+  margin: .85rem 0 .6rem;
+  text-align: center;
+  text-decoration: none;
+}
