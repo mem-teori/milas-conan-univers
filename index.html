@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="da">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#17131f">
+  <title>Milas Conan-univers · Prøveudkast</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="confetti" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" data-route="home" aria-label="Gå til forsiden">
+      <span class="brand-mark">M</span>
+      <span>
+        <strong>Milas Conan-univers</strong>
+        <small>Fødselsdagsudgave · prøveudkast</small>
+      </span>
+    </a>
+
+    <button class="menu-button" id="menuButton" aria-expanded="false" aria-controls="mainNav">☰</button>
+
+    <nav id="mainNav" class="main-nav" aria-label="Hovedmenu">
+      <button data-route="home">Forside</button>
+      <button data-route="conan">Conan</button>
+      <button data-route="print">Printstudie</button>
+      <button data-route="quiz">Livequiz</button>
+      <button data-route="private">Mit univers</button>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="view active hero-view">
+      <div class="hero-copy">
+        <span class="eyebrow">Til Mila · 27. juli</span>
+        <h1>Dit helt eget<br><span>Conan Gray-univers</span></h1>
+        <p class="lead">
+          Udforsk musikken, lav plakater, quiz med veninderne og gem alle de idéer,
+          der dukker op i løbet af dagen.
+        </p>
+        <div class="button-row">
+          <button class="primary" data-route="quiz">Start Conan-quizzen</button>
+          <button class="secondary" data-route="print">Lav et printark</button>
+        </div>
+        <div class="mini-note">
+          <span>★</span>
+          <p><strong>Prøveudkast:</strong> Alt på denne side virker lokalt i browseren. Rigtig livequiz og sikkert login kobles på i den færdige udgave.</p>
+        </div>
+      </div>
+
+      <div class="hero-art" aria-label="Illustreret Conan-inspireret quizvært">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="host-poster">
+          <div class="host-label">TONIGHT'S HOST</div>
+          <div class="host-portrait">
+            <div class="hair"></div>
+            <div class="face">
+              <span class="eye left"></span>
+              <span class="eye right"></span>
+              <span class="mouth"></span>
+            </div>
+            <div class="shirt"></div>
+          </div>
+          <h2>CONAN</h2>
+          <p>“Okay, Mila… den her burde du vide.”</p>
+          <span class="unofficial">Illustreret fanvært · uofficiel fanside</span>
+        </div>
+      </div>
+
+      <div class="door-grid">
+        <button class="door" data-route="conan">
+          <span class="door-icon">♫</span>
+          <strong>Conan-universet</strong>
+          <small>Historie, album og æraer</small>
+        </button>
+        <button class="door" data-route="print">
+          <span class="door-icon">▧</span>
+          <strong>Printstudiet</strong>
+          <small>Plakater, kort og collager</small>
+        </button>
+        <button class="door" data-route="quiz">
+          <span class="door-icon">⚡</span>
+          <strong>Conan Live Quiz</strong>
+          <small>Rumkode, venner og point</small>
+        </button>
+        <button class="door private-door" data-route="private">
+          <span class="door-icon">♡</span>
+          <strong>Mit univers</strong>
+          <small>Familie, minder og idébog</small>
+        </button>
+      </div>
+    </section>
+
+    <section id="conan" class="view">
+      <div class="section-heading">
+        <span class="eyebrow">Musikbibliotek</span>
+        <h2>Conan gennem æraerne</h2>
+        <p>Et første visuelt udkast. Den endelige side får faktatjekket biografi, komplette tracklister og billeder med tydelige kilder.</p>
+      </div>
+
+      <div class="timeline">
+        <article class="era sunset">
+          <div class="era-art"><span>2018</span><strong>Sunset<br>Season</strong></div>
+          <div class="era-copy">
+            <h3>Småbydrømme og begyndelsen</h3>
+            <p>YouTube, “Idle Town”, nostalgi og de første sange, der voksede ud af livet i Georgetown, Texas.</p>
+            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+          </div>
+        </article>
+
+        <article class="era kidkrow">
+          <div class="era-art"><span>2020</span><strong>KID<br>KROW</strong></div>
+          <div class="era-copy">
+            <h3>Gennembruddet</h3>
+            <p>Albummet med blandt andet “Maniac”, “Heather”, “The Story” og “Wish You Were Sober”.</p>
+            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+          </div>
+        </article>
+
+        <article class="era superache">
+          <div class="era-art"><span>2022</span><strong>SUPER<br>ACHE</strong></div>
+          <div class="era-copy">
+            <h3>Store følelser og røde roser</h3>
+            <p>Et mere sårbart univers med “Memories”, “Yours”, “Disaster” og “People Watching”.</p>
+            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+          </div>
+        </article>
+
+        <article class="era heaven">
+          <div class="era-art"><span>2024</span><strong>FOUND<br>HEAVEN</strong></div>
+          <div class="era-copy">
+            <h3>Retrolys og ny lyd</h3>
+            <p>Et stærkt 70’er- og 80’er-inspireret udtryk med blandt andet “Alley Rose” og “Lonely Dancers”.</p>
+            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+          </div>
+        </article>
+
+        <article class="era wishbone">
+          <div class="era-art"><span>2025</span><strong>WISH<br>BONE</strong></div>
+          <div class="era-copy">
+            <h3>Blå nostalgi og nye historier</h3>
+            <p>Den seneste albumæra i materialet med blandt andet “This Song”, “Vodka Cranberry” og “Caramel”.</p>
+            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+          </div>
+        </article>
+      </div>
+
+      <aside class="source-note">
+        <strong>Om indholdet</strong>
+        <p>Dette udkast bruger kun korte, selvskrevne resuméer. Rigtige billeder og fakta indsættes med kilde- og rettighedstjek før offentliggørelse.</p>
+      </aside>
+    </section>
+
+    <section id="print" class="view">
+      <div class="section-heading">
+        <span class="eyebrow">Printstudiet</span>
+        <h2>Vælg, saml og print</h2>
+        <p>Markér motiver, vælg layout og lav et A4-ark. De viste motiver er hjemmelavede pladsholdere til designprøven.</p>
+      </div>
+
+      <div class="studio-layout">
+        <div>
+          <div class="toolbar">
+            <label>
+              Layout
+              <select id="printLayout">
+                <option value="one">1 stor plakat</option>
+                <option value="two">2 billeder</option>
+                <option value="four" selected>4 fotokort</option>
+                <option value="polaroid">4 polaroids</option>
+              </select>
+            </label>
+            <button class="secondary compact" id="clearPrint">Ryd valg</button>
+          </div>
+
+          <div class="poster-library" id="posterLibrary">
+            <button class="poster-card selected" data-poster="Heather nights" data-era="Kid Krow">
+              <span class="poster-visual p1"><b>HEATHER</b><i>night edition</i></span>
+              <span><strong>Heather nights</strong><small>Kid Krow</small></span>
+            </button>
+            <button class="poster-card selected" data-poster="Wishbone blue" data-era="Wishbone">
+              <span class="poster-visual p2"><b>WISHBONE</b><i>blue memory</i></span>
+              <span><strong>Wishbone blue</strong><small>Wishbone</small></span>
+            </button>
+            <button class="poster-card selected" data-poster="Found Heaven glow" data-era="Found Heaven">
+              <span class="poster-visual p3"><b>FOUND<br>HEAVEN</b><i>retro glow</i></span>
+              <span><strong>Found Heaven glow</strong><small>Found Heaven</small></span>
+            </button>
+            <button class="poster-card selected" data-poster="Superache roses" data-era="Superache">
+              <span class="poster-visual p4"><b>SUPERACHE</b><i>red roses</i></span>
+              <span><strong>Superache roses</strong><small>Superache</small></span>
+            </button>
+            <button class="poster-card" data-poster="Idle Town sunset" data-era="Sunset Season">
+              <span class="poster-visual p5"><b>IDLE TOWN</b><i>summer dusk</i></span>
+              <span><strong>Idle Town sunset</strong><small>Sunset Season</small></span>
+            </button>
+            <button class="poster-card" data-poster="Conan quiz night" data-era="Birthday">
+              <span class="poster-visual p6"><b>QUIZ<br>NIGHT</b><i>Mila’s edition</i></span>
+              <span><strong>Conan quiz night</strong><small>Fødselsdag</small></span>
+            </button>
+          </div>
+        </div>
+
+        <aside class="print-preview-panel">
+          <div class="panel-title">
+            <div>
+              <small>FORHÅNDSVISNING</small>
+              <strong>A4 printark</strong>
+            </div>
+            <span id="selectedCount">4 valgt</span>
+          </div>
+          <div id="printSheet" class="print-sheet layout-four" aria-label="Forhåndsvisning af printark"></div>
+          <button class="primary full" id="printButton">Print dette ark</button>
+          <p class="fine-print">Browserens printvindue åbner. Vælg A4, stående og “baggrundsgrafik”, hvis motiverne skal med.</p>
+        </aside>
+      </div>
+    </section>
+
+    <section id="quiz" class="view">
+      <div class="section-heading">
+        <span class="eyebrow">Kahoot-lignende prøve</span>
+        <h2>Conan Live Quiz</h2>
+        <p>Opret et rum, invitér veninderne og lad den illustrerede Conan-vært styre runden.</p>
+      </div>
+
+      <div class="quiz-shell">
+        <aside class="quiz-host-card">
+          <div class="mini-host">
+            <div class="mini-hair"></div>
+            <div class="mini-face">CG</div>
+          </div>
+          <span>QUIZVÆRT</span>
+          <h3>Conan</h3>
+          <blockquote id="hostLine">“Er vi klar, Mila?”</blockquote>
+          <small>Fanfigur uden stemmekloning</small>
+        </aside>
+
+        <div class="quiz-stage">
+          <div id="quizSetup" class="quiz-screen active">
+            <span class="stage-tag">OPRET RUM</span>
+            <h3>Den store Conan-quiz</h3>
+            <p>Rumkoden kan sendes som link. I prøven kan du tilføje dem som demospillere.</p>
+
+            <div class="room-card">
+              <span>RUMKODE</span>
+              <strong id="roomCode">HEATHER7</strong>
+              <button class="icon-button" id="newRoom" title="Lav ny rumkode">↻</button>
+            </div>
+
+            <div class="invite-row">
+              <button class="secondary" id="copyInvite">Kopiér invitation</button>
+              <button class="secondary" id="addDemoPlayer">Tilføj veninde</button>
+            </div>
+
+            <div class="lobby">
+              <div class="lobby-head">
+                <strong>Venteværelse</strong>
+                <span id="playerCount">1 spiller</span>
+              </div>
+              <div id="playerList" class="player-list">
+                <span class="player host-player">👑 Mila</span>
+              </div>
+            </div>
+
+            <button class="primary full" id="startQuiz">Start quizzen</button>
+          </div>
+
+          <div id="quizQuestion" class="quiz-screen">
+            <div class="question-meta">
+              <span id="questionNumber">Spørgsmål 1 / 8</span>
+              <span class="timer" id="timer">15</span>
+            </div>
+            <h3 id="questionText"></h3>
+            <div id="answerGrid" class="answer-grid"></div>
+          </div>
+
+          <div id="quizResult" class="quiz-screen">
+            <span class="stage-tag">FACIT</span>
+            <h3 id="resultTitle"></h3>
+            <p id="resultExplanation"></p>
+            <div class="score-flash" id="scoreFlash"></div>
+            <button class="primary" id="nextQuestion">Næste spørgsmål</button>
+          </div>
+
+          <div id="quizFinal" class="quiz-screen">
+            <span class="stage-tag">SLUTSTILLING</span>
+            <h3>Quizzen er slut!</h3>
+            <div id="leaderboard" class="leaderboard"></div>
+            <button class="primary" id="restartQuiz">Spil igen</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="prototype-warning">
+        <strong>Sådan bliver den rigtige udgave:</strong>
+        <span>GitHub Pages viser spillet. Firebase synkroniserer samme spørgsmål, tid, svar og point på alle telefoner. Denne prototype simulerer flowet på én enhed.</span>
+      </div>
+    </section>
+
+    <section id="private" class="view">
+      <div id="privateLock" class="lock-screen">
+        <div class="lock-card">
+          <span class="lock-icon">♡</span>
+          <span class="eyebrow">Privat område · demonstration</span>
+          <h2>Mit univers</h2>
+          <p>Familiebilleder og tanker skal ikke ligge offentligt på GitHub. Her demonstreres login og lokal lagring.</p>
+          <label class="pin-label">
+            Prøvekode
+            <input id="pinInput" type="password" inputmode="numeric" maxlength="4" placeholder="••••">
+          </label>
+          <button class="primary full" id="unlockButton">Lås op</button>
+          <small>Brug <strong>1234</strong> i prøveudkastet. Det er ikke rigtig sikkerhed.</small>
+          <p id="pinError" class="error-text"></p>
+        </div>
+      </div>
+
+      <div id="privateContent" class="private-content hidden">
+        <div class="private-header">
+          <div>
+            <span class="eyebrow">Kun Mila og mor</span>
+            <h2>Milas private univers</h2>
+          </div>
+          <button class="secondary compact" id="lockAgain">Lås igen</button>
+        </div>
+
+        <div class="private-tabs" role="tablist">
+          <button class="active" data-private-tab="family">Familie og minder</button>
+          <button data-private-tab="ideas">Idébog</button>
+          <button data-private-tab="projects">Projektbord</button>
+        </div>
+
+        <div id="familyTab" class="private-tab active">
+          <div class="family-grid">
+            <article class="family-card balder"><div class="family-photo">B</div><h3>Balder</h3><p>Minder, billeder og små historier.</p></article>
+            <article class="family-card kali"><div class="family-photo">K</div><h3>Kali</h3><p>Favoritøjeblikke og ting, I deler.</p></article>
+            <article class="family-card maxi"><div class="family-photo">🐾</div><h3>Maxi</h3><p>Verdens største personlighed på fire ben.</p></article>
+            <article class="family-card mila"><div class="family-photo">M</div><h3>Mila</h3><p>Egne billeder, collager og favoritter.</p></article>
+            <article class="family-card mor"><div class="family-photo">♡</div><h3>Mor</h3><p>Hilsener, billeder og fælles minder.</p></article>
+          </div>
+
+          <div class="upload-demo">
+            <div>
+              <h3>Prøv et privat billede</h3>
+              <p>Vælg et billede fra computeren. I denne prøve vises det kun lokalt i browseren og uploades ikke til nettet.</p>
+            </div>
+            <label class="upload-button">
+              Vælg billede
+              <input id="photoUpload" type="file" accept="image/*">
+            </label>
+            <div id="photoPreview" class="photo-preview empty">
+              <span>Dit valgte billede vises her</span>
+            </div>
+          </div>
+        </div>
+
+        <div id="ideasTab" class="private-tab">
+          <div class="idea-layout">
+            <form id="ideaForm" class="idea-capture">
+              <span class="eyebrow">Tankefangeren</span>
+              <h3>Hvad fløj lige gennem hovedet?</h3>
+              <label>
+                Type
+                <select id="ideaType">
+                  <option value="idé">💡 En idé</option>
+                  <option value="spørgsmål">❓ Et spørgsmål</option>
+                  <option value="husk">📌 Noget jeg vil huske</option>
+                  <option value="tanke">☁️ En tanke</option>
+                  <option value="projekt">🛠️ Noget jeg vil lave</option>
+                </select>
+              </label>
+              <label>
+                Min tanke
+                <textarea id="ideaText" rows="5" placeholder="Skriv den hurtigt. Den behøver ikke være færdig eller pæn…"></textarea>
+              </label>
+              <label>
+                Små mærker, hvis du har lyst
+                <input id="ideaTags" type="text" placeholder="fx Conan, tegning, Maxi">
+              </label>
+              <button class="primary full" type="submit">Fang tanken</button>
+              <p class="fine-print">Noterne gemmes kun i denne browsers lokale lager i prøveudkastet.</p>
+            </form>
+
+            <div class="conductor-panel">
+              <div class="conductor-head">
+                <span class="conductor-icon">✦</span>
+                <div>
+                  <small>DEN LILLE DIRIGENT</small>
+                  <strong>Holder trådene — ikke tankerne</strong>
+                </div>
+              </div>
+              <p id="conductorMessage">Skriv en tanke, så hjælper jeg med at finde en god skuffe til den.</p>
+              <div class="conductor-actions">
+                <button data-idea-prompt="Hvad vil jeg undersøge mere?">Undersøg senere</button>
+                <button data-idea-prompt="Hvad er det mindste første skridt?">Første skridt</button>
+                <button data-idea-prompt="Hænger det sammen med noget andet?">Find forbindelse</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="notes-heading">
+            <div>
+              <h3>Mine fangede tanker</h3>
+              <p id="noteSummary">Ingen noter endnu.</p>
+            </div>
+            <select id="noteFilter" aria-label="Filtrér noter">
+              <option value="alle">Alle typer</option>
+              <option value="idé">Idéer</option>
+              <option value="spørgsmål">Spørgsmål</option>
+              <option value="husk">Husk</option>
+              <option value="tanke">Tanker</option>
+              <option value="projekt">Projekter</option>
+            </select>
+          </div>
+          <div id="notesList" class="notes-list"></div>
+        </div>
+
+        <div id="projectsTab" class="private-tab">
+          <div class="project-intro">
+            <span class="eyebrow">Projektbordet</span>
+            <h3>Når en tanke begynder at ville noget</h3>
+            <p>Noter markeret som projekter eller flyttet hertil vises som små arbejdskort.</p>
+          </div>
+          <div id="projectBoard" class="project-board"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <footer>
+    <p>Prøveudkast til Mila · Uofficiel fanside · Ingen forbindelse til Conan Gray eller Republic Records</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
