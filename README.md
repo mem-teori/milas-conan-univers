@@ -1,7 +1,20 @@
-# Milas Conan-univers v0.3
+# Milas Conan-univers v0.4
 
-Denne version udvider Conan-delen med galleri, æra-kort, favoritter og lysboksvisning.
+Denne version er **klar til rigtige Conan-billeder**.
 
+## Nyt i v0.4
+- projektet har nu en rigtig `images/`-mappestruktur
+- hero-sektionen er forberedt til et rigtigt Conan-billede
+- galleriet er forberedt til lokale billedstier
+- du kan nu begynde at lægge Conan-billeder direkte ind i projektet
+
+## Læg billeder her
+- `images/hero/conan-hero.jpg`
+- `images/gallery/`
+
+Læs også `IMAGES_NOTE.md`.
+
+---
 # Milas Conan-univers v0.2
 
 GitHub Pages-klar prøveudgave med:

@@ -12,7 +12,7 @@ const state = {
   answered: false,
   notes: JSON.parse(localStorage.getItem("milaNotes") || "[]"),
   galleryFilter: "alle",
-  favoriteGallery: new Set(JSON.parse(localStorage.getItem("milaGalleryFavorites") || "[\"Kid Krow Monochrome\", \"Wishbone Blue Window\", \"Superache Roses\"]")),
+  favoriteGallery: new Set(JSON.parse(localStorage.getItem("milaGalleryFavorites") || "[\"Kid Krow Portrait\", \"Wishbone Blue\", \"Superache Roses\"]")),
   currentGalleryItem: null
 };
 
@@ -380,7 +380,6 @@ $("#ideaForm").addEventListener("submit", event => {
   $("#ideaText").value = "";
   $("#ideaTags").value = "";
   renderNotes();
-renderGallery();
   showToast("Tanken er fanget");
 });
 
@@ -422,14 +421,12 @@ function renderNotes() {
     state.notes = state.notes.filter(note => note.id !== button.dataset.delete);
     saveNotes();
     renderNotes();
-renderGallery();
   }));
   $$("[data-promote]").forEach(button => button.addEventListener("click", () => {
     const note = state.notes.find(n => n.id === button.dataset.promote);
     if (note) note.project = !note.project;
     saveNotes();
     renderNotes();
-renderGallery();
     showToast(note?.project ? "Flyttet til Projektbordet" : "Fjernet fra Projektbordet");
   }));
 }
@@ -454,143 +451,44 @@ function escapeHtml(value) {
 }
 
 
+const heroArchive = {
+  title: "CONAN<br>GRAY",
+  subtitle: "fan archive edition",
+  image: "images/hero/conan-hero.jpg"
+};
+
 const galleryItems = [
-  { title: "Sunset Motel Glow", era: "Sunset Season", caption: "En varm, begyndende æra med small-town sunset-stemning.", style: "g1", label: "archive glow" },
-  { title: "Kid Krow Monochrome", era: "Kid Krow", caption: "Mørkt, enkelt og mere dramatisk — perfekt som mini-plakat.", style: "g2", label: "monochrome mood" },
-  { title: "Superache Roses", era: "Superache", caption: "Røde toner, knuste hjerter og store følelser.", style: "g3", label: "rose letter" },
-  { title: "Found Heaven Spotlight", era: "Found Heaven", caption: "Scenelys og retro-pop vibes med mere show.", style: "g4", label: "retro glow" },
-  { title: "Wishbone Blue Window", era: "Wishbone", caption: "Blå, rolig og drømmende — den type motiv der inviterer til print.", style: "g5", label: "blue memory" },
-  { title: "Late Night Confession", era: "Kid Krow", caption: "En mørk fanplakat til natte-spillelisten og quiz-aftenen.", style: "g6", label: "night confession" },
-  { title: "This Song Letters", era: "Wishbone", caption: "Et mere stille og nostalgisk kort med breve og blå farver.", style: "g7", label: "letters + blue" },
-  { title: "Heart Notes", era: "Superache", caption: "Et følelsesladet motiv, der passer til favoritmapper og collager.", style: "g8", label: "heart notes" },
-  { title: "Idle Town Dusk", era: "Sunset Season", caption: "Solnedgang og veje ud af byen — en tidlig Conan-stemning.", style: "g9", label: "sunset drive" },
-  { title: "Lonely Dancers Lights", era: "Found Heaven", caption: "Lys, fart og dansegulv i et mere showet univers.", style: "g10", label: "dance floor" },
-  { title: "Heather Notes", era: "Kid Krow", caption: "En mere klassisk, mørk fan-card med notebook-stemning.", style: "g11", label: "notebook mood" },
-  { title: "Wishbone Polaroid", era: "Wishbone", caption: "Lyse farver og polaroid-vibe til A4-ark eller moodboard.", style: "g12", label: "polaroid card" }
+  { title: "Kid Krow Portrait", era: "Kid Krow", caption: "Mørk og enkel Conan-stemning til galleri og print.", style: "g2", label: "kid krow", image: "images/gallery/kid-krow-1.jpg" },
+  { title: "Heather Mood", era: "Kid Krow", caption: "En mere rolig, følelsesladet stemning fra Kid Krow-universet.", style: "g11", label: "heather mood", image: "images/gallery/kid-krow-2.jpg" },
+  { title: "Superache Roses", era: "Superache", caption: "Røde toner og et mere sårbart, dramatisk udtryk.", style: "g3", label: "superache", image: "images/gallery/superache-1.jpg" },
+  { title: "Found Heaven Lights", era: "Found Heaven", caption: "Lys, retro og scenefornemmelse i Found Heaven-æraen.", style: "g10", label: "found heaven", image: "images/gallery/found-heaven-1.jpg" },
+  { title: "Wishbone Blue", era: "Wishbone", caption: "Blå, rolig og drømmende Conan-stemning.", style: "g5", label: "wishbone", image: "images/gallery/wishbone-1.jpg" },
+  { title: "Sunset Season Glow", era: "Sunset Season", caption: "Varm og tidlig æra med orange/lilla solnedgangsenergi.", style: "g1", label: "sunset season", image: "images/gallery/sunset-season-1.jpg" },
+  { title: "Late Night Confession", era: "Kid Krow", caption: "Et mørkere fan-card, som også fungerer uden et rigtigt billede endnu.", style: "g6", label: "night confession", image: "" },
+  { title: "This Song Letters", era: "Wishbone", caption: "Et blidere motiv, fint til polaroidark eller collage.", style: "g7", label: "letters + blue", image: "" },
+  { title: "Heart Notes", era: "Superache", caption: "Klar til at blive udskiftet med et rigtigt Superache-billede senere.", style: "g8", label: "heart notes", image: "" },
+  { title: "Lonely Dancers", era: "Found Heaven", caption: "Placeholder-kort indtil et rigtigt æra-billede lægges ind.", style: "g4", label: "dance floor", image: "" }
 ];
 
-galleryItems.forEach(item => {
-  if (!(item.title in posterStyles)) posterStyles[item.title] = item.style;
-});
-
-function saveFavoriteGallery() {
-  localStorage.setItem("milaGalleryFavorites", JSON.stringify([...state.favoriteGallery]));
+function setVisualBackground(el, item) {
+  if (!el) return;
+  el.classList.remove("has-image");
+  el.style.backgroundImage = "";
+  if (item && item.image) {
+    el.classList.add("has-image");
+    el.style.backgroundImage = `url("${item.image}")`;
+  }
 }
 
-function filteredGalleryItems() {
-  if (state.galleryFilter === "alle") return galleryItems;
-  if (state.galleryFilter === "favoritter") return galleryItems.filter(item => state.favoriteGallery.has(item.title));
-  return galleryItems.filter(item => item.era === state.galleryFilter);
+function renderArchiveHero() {
+  const visual = document.querySelector("#archiveHeroVisual");
+  const title = document.querySelector("#archiveHeroTitle");
+  const subtitle = document.querySelector("#archiveHeroSubtitle");
+  if (!visual || !title || !subtitle) return;
+  title.innerHTML = heroArchive.title;
+  subtitle.textContent = heroArchive.subtitle;
+  setVisualBackground(visual, heroArchive);
 }
-
-function renderFavoritesStrip() {
-  const strip = $("#favoritesStrip");
-  if (!strip) return;
-  const favorites = galleryItems.filter(item => state.favoriteGallery.has(item.title)).slice(0, 3);
-  strip.innerHTML = favorites.length ? favorites.map(item => `
-    <article class="favorite-mini">
-      <div class="favorite-mini-visual gallery-visual ${item.style}">
-        <strong>${escapeHtml(item.title.toUpperCase())}</strong>
-        <small>${escapeHtml(item.label)}</small>
-      </div>
-      <div>
-        <span class="note-type">${escapeHtml(item.era)}</span>
-        <h4>${escapeHtml(item.title)}</h4>
-        <p>${escapeHtml(item.caption)}</p>
-        <button data-open-gallery-title="${escapeHtml(item.title)}">Åbn motiv →</button>
-      </div>
-    </article>`).join("") : '<p class="fine-print">Ingen favoritter endnu — klik på hjertet i galleriet, så dukker de op her.</p>';
-  $$('[data-open-gallery-title]').forEach(button => button.addEventListener('click', () => openGalleryItem(button.dataset.openGalleryTitle)));
-}
-
-function renderGallery() {
-  const grid = $("#galleryGrid");
-  if (!grid) return;
-  grid.innerHTML = filteredGalleryItems().map(item => `
-    <article class="gallery-card">
-      <button class="gallery-visual ${item.style}" data-open-gallery="${escapeHtml(item.title)}">
-        <strong>${escapeHtml(item.title.toUpperCase())}</strong>
-        <small>${escapeHtml(item.label)}</small>
-      </button>
-      <div class="gallery-card-copy">
-        <div class="gallery-meta">
-          <span>${escapeHtml(item.era)}</span>
-          <span>${state.favoriteGallery.has(item.title) ? '♥ gemt' : '☆ klar til favorit'}</span>
-        </div>
-        <h4>${escapeHtml(item.title)}</h4>
-        <p>${escapeHtml(item.caption)}</p>
-        <div class="gallery-actions">
-          <button data-open-gallery="${escapeHtml(item.title)}">Åbn</button>
-          <button data-favorite-gallery="${escapeHtml(item.title)}" class="${state.favoriteGallery.has(item.title) ? 'active-fav' : ''}">${state.favoriteGallery.has(item.title) ? 'Favorit' : 'Hjerte'}</button>
-          <button data-gallery-print="${escapeHtml(item.title)}">Til print</button>
-        </div>
-      </div>
-    </article>`).join("");
-  $$('[data-open-gallery]').forEach(button => button.addEventListener('click', () => openGalleryItem(button.dataset.openGallery)));
-  $$('[data-favorite-gallery]').forEach(button => button.addEventListener('click', () => toggleGalleryFavorite(button.dataset.favoriteGallery)));
-  $$('[data-gallery-print]').forEach(button => button.addEventListener('click', () => addGalleryItemToPrint(button.dataset.galleryPrint)));
-  renderFavoritesStrip();
-}
-
-function toggleGalleryFavorite(title) {
-  if (state.favoriteGallery.has(title)) state.favoriteGallery.delete(title);
-  else state.favoriteGallery.add(title);
-  saveFavoriteGallery();
-  renderGallery();
-  showToast(state.favoriteGallery.has(title) ? 'Gemt som favorit' : 'Fjernet fra favoritter');
-}
-
-function openGalleryItem(title) {
-  const item = galleryItems.find(entry => entry.title === title);
-  if (!item) return;
-  state.currentGalleryItem = item;
-  $("#modalVisual").className = `modal-visual gallery-visual ${item.style}`;
-  $("#modalVisual").innerHTML = `<strong>${escapeHtml(item.title.toUpperCase())}</strong><small>${escapeHtml(item.label)}</small>`;
-  $("#modalEra").textContent = item.era;
-  $("#modalTitle").textContent = item.title;
-  $("#modalCaption").textContent = item.caption;
-  $("#modalFavorite").textContent = state.favoriteGallery.has(item.title) ? 'Fjern favorit' : 'Gem som favorit';
-  $("#galleryModal").classList.add('open');
-  $("#galleryModal").setAttribute('aria-hidden', 'false');
-}
-
-function closeGalleryModal() {
-  $("#galleryModal")?.classList.remove('open');
-  $("#galleryModal")?.setAttribute('aria-hidden', 'true');
-}
-
-function addGalleryItemToPrint(title) {
-  state.selectedPosters.add(title);
-  renderPrintSheet();
-  routeTo('print');
-  showToast('Motivet er sendt videre til printarket');
-}
-
-$("#galleryFilters")?.addEventListener('click', event => {
-  const button = event.target.closest('[data-gallery-filter]');
-  if (!button) return;
-  state.galleryFilter = button.dataset.galleryFilter;
-  $$('[data-gallery-filter]').forEach(chip => chip.classList.toggle('active', chip === button));
-  renderGallery();
-});
-
-$("#jumpToGallery")?.addEventListener('click', () => {
-  $("#galleryAnchor")?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-});
-$("#closeGalleryModal")?.addEventListener('click', closeGalleryModal);
-$("#galleryModal")?.addEventListener('click', event => {
-  if (event.target.id === 'galleryModal') closeGalleryModal();
-});
-$("#modalFavorite")?.addEventListener('click', () => {
-  if (!state.currentGalleryItem) return;
-  toggleGalleryFavorite(state.currentGalleryItem.title);
-  if (state.currentGalleryItem) $("#modalFavorite").textContent = state.favoriteGallery.has(state.currentGalleryItem.title) ? 'Fjern favorit' : 'Gem som favorit';
-});
-$("#modalPrint")?.addEventListener('click', () => {
-  if (!state.currentGalleryItem) return;
-  closeGalleryModal();
-  addGalleryItemToPrint(state.currentGalleryItem.title);
-});
 
 // Startup
 const initialRoute = location.hash.replace("#", "");
@@ -598,7 +496,6 @@ routeTo(["home", "conan", "print", "quiz", "private"].includes(initialRoute) ? i
 renderPrintSheet();
 renderPlayers();
 renderNotes();
-renderGallery();
 
 setTimeout(() => {
   if (!sessionStorage.getItem("milaWelcome")) {
@@ -606,3 +503,6 @@ setTimeout(() => {
     sessionStorage.setItem("milaWelcome", "1");
   }
 }, 450);
+
+
+window.__milaImageReady = true;
