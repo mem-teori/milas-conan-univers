@@ -1,3 +1,11 @@
+# Milas Conan-univers v0.6 — stort galleri
+
+v0.6 expands the gallery from 10 cards to **34 gallery cards**, including 29 image-based fan-art entries.
+
+The new thumbnails are organized under `images/gallery/more/`.
+
+---
+
 # Milas Conan-univers v0.5 — AI fan-art gallery
 
 This version integrates five original AI-generated Conan Gray-inspired fan images into:

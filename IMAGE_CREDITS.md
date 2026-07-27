@@ -20,3 +20,12 @@ Files:
 - `images/gallery/superache-1.png`
 - `images/gallery/found-heaven-1.png`
 - `images/gallery/wishbone-1.png`
+
+
+## v0.6 gallery expansion
+
+Twenty-four additional gallery thumbnails were cropped from an original AI-generated gallery board created for this project. They are stored under:
+
+- `images/gallery/more/`
+
+They remain unofficial AI fan illustrations and are not authentic photographs.

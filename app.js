@@ -543,6 +543,198 @@ const galleryItems = [
     style: "g10",
     label: "dance floor",
     image: ""
+  },
+  {
+    title: "Ivory Window",
+    era: "Wishbone",
+    caption: "Et lyst og roligt portræt med blød dagslysstemning.",
+    style: "g5",
+    label: "soft daylight",
+    image: "images/gallery/more/wb-02.jpg"
+  },
+  {
+    title: "Striped Silence",
+    era: "Kid Krow",
+    caption: "Sort-hvidt, stille portræt med mørk Kid Krow-følelse.",
+    style: "g2",
+    label: "monochrome quiet",
+    image: "images/gallery/more/kk-02.jpg"
+  },
+  {
+    title: "Heart Stage",
+    era: "Sunset Season",
+    caption: "Rød koncertenergi og et tidligt, ungdommeligt liveudtryk.",
+    style: "g1",
+    label: "red live",
+    image: "images/gallery/more/ss-02.jpg"
+  },
+  {
+    title: "Sticker Close-up",
+    era: "Superache",
+    caption: "Et intenst nærportræt med små hjertedetaljer.",
+    style: "g3",
+    label: "heart detail",
+    image: "images/gallery/more/sa-02.jpg"
+  },
+  {
+    title: "Red Stripes",
+    era: "Kid Krow",
+    caption: "Et mørkt og eftertænksomt portræt i røde og sorte striber.",
+    style: "g2",
+    label: "red stripes",
+    image: "images/gallery/more/kk-03.jpg"
+  },
+  {
+    title: "Blue Guitar Stage",
+    era: "Wishbone",
+    caption: "Blåt scenelys og guitar i et stort liveøjeblik.",
+    style: "g5",
+    label: "blue stage",
+    image: "images/gallery/more/wb-03.jpg"
+  },
+  {
+    title: "Golden Piano",
+    era: "Found Heaven",
+    caption: "En varm silhuet ved klaveret i gyldent lys.",
+    style: "g4",
+    label: "golden piano",
+    image: "images/gallery/more/fh-02.jpg"
+  },
+  {
+    title: "Heart Face",
+    era: "Superache",
+    caption: "Et enkelt portræt med små røde hjertemarkeringer.",
+    style: "g3",
+    label: "heart portrait",
+    image: "images/gallery/more/sa-03.jpg"
+  },
+  {
+    title: "Warm Candid",
+    era: "Sunset Season",
+    caption: "Et varmt og mere afslappet portræt med tidlig fan-archive-stemning.",
+    style: "g1",
+    label: "warm candid",
+    image: "images/gallery/more/ss-03.jpg"
+  },
+  {
+    title: "Red Guitar Night",
+    era: "Sunset Season",
+    caption: "Rød livebelysning og guitar i en tæt koncertscene.",
+    style: "g1",
+    label: "night guitar",
+    image: "images/gallery/more/ss-04.jpg"
+  },
+  {
+    title: "Flowers Studio",
+    era: "Superache",
+    caption: "Blomster og et blødt studioportræt i Superache-farver.",
+    style: "g3",
+    label: "flowers studio",
+    image: "images/gallery/more/sa-04.jpg"
+  },
+  {
+    title: "Side Profile",
+    era: "Kid Krow",
+    caption: "Et mørkt sideportræt med enkelt, filmisk lys.",
+    style: "g2",
+    label: "cinematic profile",
+    image: "images/gallery/more/kk-04.jpg"
+  },
+  {
+    title: "Retro Suit",
+    era: "Found Heaven",
+    caption: "Et mere poleret og retropræget portræt i jakkesæt.",
+    style: "g4",
+    label: "retro suit",
+    image: "images/gallery/more/fh-03.jpg"
+  },
+  {
+    title: "Gold Vocal",
+    era: "Found Heaven",
+    caption: "Gyldent scenelys og et stort vokaløjeblik.",
+    style: "g4",
+    label: "gold vocal",
+    image: "images/gallery/more/fh-04.jpg"
+  },
+  {
+    title: "Black-and-white Thought",
+    era: "Kid Krow",
+    caption: "Et sort-hvidt nærportræt med rolig intensitet.",
+    style: "g2",
+    label: "black and white",
+    image: "images/gallery/more/kk-05.jpg"
+  },
+  {
+    title: "Blue Hands Up",
+    era: "Wishbone",
+    caption: "Et bredt livebillede i blå toner med armene løftet.",
+    style: "g5",
+    label: "blue live",
+    image: "images/gallery/more/wb-04.jpg"
+  },
+  {
+    title: "Autumn Walk",
+    era: "Sunset Season",
+    caption: "Et udendørs portræt med blød efterårsstemning.",
+    style: "g1",
+    label: "autumn candid",
+    image: "images/gallery/more/ss-05.jpg"
+  },
+  {
+    title: "Black-and-white Guitar",
+    era: "Kid Krow",
+    caption: "Et tæt sort-hvidt guitarøjeblik.",
+    style: "g2",
+    label: "guitar close-up",
+    image: "images/gallery/more/kk-06.jpg"
+  },
+  {
+    title: "Archive Tee",
+    era: "Kid Krow",
+    caption: "Et fan-archive-inspireret portræt med guitar og grafisk T-shirt.",
+    style: "g2",
+    label: "archive tee",
+    image: "images/gallery/more/kk-07.jpg"
+  },
+  {
+    title: "Dark Hoodie",
+    era: "Kid Krow",
+    caption: "Et mørkt, enkelt hoodie-portræt.",
+    style: "g2",
+    label: "dark hoodie",
+    image: "images/gallery/more/kk-08.jpg"
+  },
+  {
+    title: "Red Sweater",
+    era: "Superache",
+    caption: "Et roligt portræt i dyb rød farve.",
+    style: "g3",
+    label: "red sweater",
+    image: "images/gallery/more/sa-05.jpg"
+  },
+  {
+    title: "Blue Festival",
+    era: "Wishbone",
+    caption: "Et blåt festivaløjeblik med guitar og scenelys.",
+    style: "g5",
+    label: "blue festival",
+    image: "images/gallery/more/wb-05.jpg"
+  },
+  {
+    title: "Heart Hands",
+    era: "Wishbone",
+    caption: "Et afslappet candid-øjeblik med hænder formet som et hjerte.",
+    style: "g5",
+    label: "heart hands",
+    image: "images/gallery/more/wb-06.jpg"
+  },
+  {
+    title: "Midnight Guitar Suit",
+    era: "Found Heaven",
+    caption: "Sort-hvid guitar og et mere elegant sceneudtryk.",
+    style: "g4",
+    label: "midnight suit",
+    image: "images/gallery/more/fh-05.jpg"
   }
 ];
 
