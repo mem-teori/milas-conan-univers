@@ -29,3 +29,8 @@ Twenty-four additional gallery thumbnails were cropped from an original AI-gener
 - `images/gallery/more/`
 
 They remain unofficial AI fan illustrations and are not authentic photographs.
+
+
+## v0.7 archive expansion
+
+31 additional AI fan-art crops were added under `images/gallery/v07/`. The gallery now contains 65 cards.

@@ -13,7 +13,8 @@ const state = {
   notes: JSON.parse(localStorage.getItem("milaNotes") || "[]"),
   galleryFilter: "alle",
   favoriteGallery: new Set(JSON.parse(localStorage.getItem("milaGalleryFavorites") || "[\"Kid Krow Star Guitar\", \"Wishbone Blue\", \"Superache Roses\"]")),
-  currentGalleryItem: null
+  currentGalleryItem: null,
+  galleryLimit: 12
 };
 
 const quizQuestions = [
@@ -735,6 +736,254 @@ const galleryItems = [
     style: "g4",
     label: "midnight suit",
     image: "images/gallery/more/fh-05.jpg"
+  },
+  {
+    title: "Blue Star Guitar",
+    era: "Live",
+    caption: "Blåt scenelys og sort guitar i et stort liveøjeblik.",
+    style: "g6",
+    label: "blue live",
+    image: "images/gallery/v07/live-blue-guitar.jpg"
+  },
+  {
+    title: "Midnight Studio",
+    era: "Photoshoots",
+    caption: "Et mørkt, klassisk studioportræt.",
+    style: "g11",
+    label: "dark studio",
+    image: "images/gallery/v07/photo-dark-studio.jpg"
+  },
+  {
+    title: "Grey Suit Archive",
+    era: "Photoshoots",
+    caption: "Et elegant portræt i grå jakkestil.",
+    style: "g11",
+    label: "grey archive",
+    image: "images/gallery/v07/photo-grey-suit.jpg"
+  },
+  {
+    title: "Red Candle Close-up",
+    era: "Superache",
+    caption: "Røde toner, blomster og levende lys.",
+    style: "g3",
+    label: "red candle",
+    image: "images/gallery/v07/superache-red-candle.jpg"
+  },
+  {
+    title: "Purple Stage Guitar",
+    era: "Live",
+    caption: "Lilla koncertlys og et energisk guitarøjeblik.",
+    style: "g6",
+    label: "purple stage",
+    image: "images/gallery/v07/live-purple-guitar.jpg"
+  },
+  {
+    title: "White Wings Stage",
+    era: "Live",
+    caption: "En drømmende fan-fantasi med scenevinger.",
+    style: "g6",
+    label: "stage fantasy",
+    image: "images/gallery/v07/live-white-wings.jpg"
+  },
+  {
+    title: "Café Notebook",
+    era: "Candids",
+    caption: "Et roligt caféøjeblik med notesbog.",
+    style: "g7",
+    label: "café candid",
+    image: "images/gallery/v07/candid-cafe.jpg"
+  },
+  {
+    title: "Garden White Shirt",
+    era: "Candids",
+    caption: "Et blødt udendørs portræt i grønne omgivelser.",
+    style: "g7",
+    label: "garden candid",
+    image: "images/gallery/v07/candid-garden.jpg"
+  },
+  {
+    title: "Red Backstage Glow",
+    era: "Sunset Season",
+    caption: "Rød backstage-stemning med tidlig liveenergi.",
+    style: "g1",
+    label: "red backstage",
+    image: "images/gallery/v07/sunset-red-backstage.jpg"
+  },
+  {
+    title: "Green Shirt Portrait",
+    era: "Candids",
+    caption: "Et afslappet portræt i grønne toner.",
+    style: "g7",
+    label: "green candid",
+    image: "images/gallery/v07/candid-green-shirt.jpg"
+  },
+  {
+    title: "Blue Wings Guitar",
+    era: "Live",
+    caption: "Et blåt fan-fantasi-motiv med guitar og vinger.",
+    style: "g6",
+    label: "blue fantasy",
+    image: "images/gallery/v07/live-blue-wings.jpg"
+  },
+  {
+    title: "Warm Window Portrait",
+    era: "Photoshoots",
+    caption: "Et filmisk portræt i varmt vindueslys.",
+    style: "g11",
+    label: "warm window",
+    image: "images/gallery/v07/photo-warm-window.jpg"
+  },
+  {
+    title: "Candlelight Tee",
+    era: "Candids",
+    caption: "Et afslappet motiv i varmt levende lys.",
+    style: "g7",
+    label: "candle candid",
+    image: "images/gallery/v07/candid-candle-tee.jpg"
+  },
+  {
+    title: "White Jacket Corridor",
+    era: "Photoshoots",
+    caption: "Et rent modeportræt i en mørk korridor.",
+    style: "g11",
+    label: "white jacket",
+    image: "images/gallery/v07/photo-white-jacket.jpg"
+  },
+  {
+    title: "Sunset Season Poster",
+    era: "Sunset Season",
+    caption: "Et lodret rødt æraportræt til galleri eller print.",
+    style: "g1",
+    label: "era poster",
+    image: "images/gallery/v07/era-sunset-poster.jpg"
+  },
+  {
+    title: "Kid Krow Poster",
+    era: "Kid Krow",
+    caption: "Et sort-hvidt Kid Krow-kort med klassisk arkivlook.",
+    style: "g2",
+    label: "era poster",
+    image: "images/gallery/v07/era-kid-krow-poster.jpg"
+  },
+  {
+    title: "Superache Poster",
+    era: "Superache",
+    caption: "Roser og dybe røde farver samlet som æraplakat.",
+    style: "g3",
+    label: "era poster",
+    image: "images/gallery/v07/era-superache-poster.jpg"
+  },
+  {
+    title: "Found Heaven Poster",
+    era: "Found Heaven",
+    caption: "Gyldent scenelys i en lodret Found Heaven-plakat.",
+    style: "g4",
+    label: "era poster",
+    image: "images/gallery/v07/era-found-heaven-poster.jpg"
+  },
+  {
+    title: "Wishbone Poster",
+    era: "Wishbone",
+    caption: "Et blåt Wishbone-kort med vokal og scenelys.",
+    style: "g5",
+    label: "era poster",
+    image: "images/gallery/v07/era-wishbone-poster.jpg"
+  },
+  {
+    title: "Crimson Favourite",
+    era: "Superache",
+    caption: "Et varmt rødt favoritportræt.",
+    style: "g3",
+    label: "Mila favourite",
+    image: "images/gallery/v07/fav-red-suit.jpg"
+  },
+  {
+    title: "White Tee Favourite",
+    era: "Candids",
+    caption: "Et afslappet fan-archive-portræt.",
+    style: "g7",
+    label: "Mila favourite",
+    image: "images/gallery/v07/fav-white-tee.jpg"
+  },
+  {
+    title: "Monochrome Favourite",
+    era: "Kid Krow",
+    caption: "Et sort-hvidt favoritkort med mørk stemning.",
+    style: "g2",
+    label: "Mila favourite",
+    image: "images/gallery/v07/fav-mono-suit.jpg"
+  },
+  {
+    title: "Golden Brown Favourite",
+    era: "Found Heaven",
+    caption: "Et varmt gyldent portræt til favoritvæggen.",
+    style: "g4",
+    label: "Mila favourite",
+    image: "images/gallery/v07/fav-brown-sweater.jpg"
+  },
+  {
+    title: "Sunset Season Collection",
+    era: "Sunset Season",
+    caption: "Seks små røde og varme motiver samlet i ét archive-kort.",
+    style: "g1",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-sunset.jpg"
+  },
+  {
+    title: "Kid Krow Collection",
+    era: "Kid Krow",
+    caption: "En sort-hvid mini-samling til Kid Krow-arkivet.",
+    style: "g2",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-kid-krow.jpg"
+  },
+  {
+    title: "Superache Collection",
+    era: "Superache",
+    caption: "Roser, rødt lys og portrætter samlet i én collage.",
+    style: "g3",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-superache.jpg"
+  },
+  {
+    title: "Found Heaven Collection",
+    era: "Found Heaven",
+    caption: "Gyldne live- og portrætmotiver samlet i et æraark.",
+    style: "g4",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-found-heaven.jpg"
+  },
+  {
+    title: "Wishbone Collection",
+    era: "Wishbone",
+    caption: "En blå samling med guitar, scene og portrætter.",
+    style: "g5",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-wishbone.jpg"
+  },
+  {
+    title: "Live Collection",
+    era: "Live",
+    caption: "Lilla og blå koncertøjeblikke samlet i ét kort.",
+    style: "g6",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-live.jpg"
+  },
+  {
+    title: "Candid Collection",
+    era: "Candids",
+    caption: "Udendørs og afslappede øjeblikke samlet som miniarkiv.",
+    style: "g7",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-candids.jpg"
+  },
+  {
+    title: "Photoshoot Collection",
+    era: "Photoshoots",
+    caption: "Mode- og studioportrætter samlet i én billedvæg.",
+    style: "g11",
+    label: "six-image collection",
+    image: "images/gallery/v07/collage-photoshoots.jpg"
   }
 ];
 
@@ -803,7 +1052,11 @@ function renderFavoritesStrip() {
 function renderGallery() {
   const grid = $("#galleryGrid");
   if (!grid) return;
-  grid.innerHTML = filteredGalleryItems().map(item => `
+
+  const filtered = filteredGalleryItems();
+  const visible = filtered.slice(0, state.galleryLimit);
+
+  grid.innerHTML = visible.map(item => `
     <article class="gallery-card">
       <button class="gallery-visual ${item.style}" data-open-gallery="${escapeHtml(item.title)}" data-gallery-visual="${escapeHtml(item.title)}" aria-label="Åbn ${escapeHtml(item.title)}">
         <strong>${escapeHtml(item.title.toUpperCase())}</strong>
@@ -823,6 +1076,7 @@ function renderGallery() {
         </div>
       </div>
     </article>`).join("");
+
   $$('[data-open-gallery]').forEach(button => button.addEventListener('click', () => openGalleryItem(button.dataset.openGallery)));
   $$('[data-gallery-visual]').forEach(node => {
     const item = galleryItems.find(entry => entry.title === node.dataset.galleryVisual);
@@ -830,6 +1084,15 @@ function renderGallery() {
   });
   $$('[data-favorite-gallery]').forEach(button => button.addEventListener('click', () => toggleGalleryFavorite(button.dataset.favoriteGallery)));
   $$('[data-gallery-print]').forEach(button => button.addEventListener('click', () => addGalleryItemToPrint(button.dataset.galleryPrint)));
+
+  const count = $("#galleryCount");
+  if (count) count.textContent = `${visible.length} af ${filtered.length} motiver vist`;
+
+  const moreButton = $("#showMoreGallery");
+  if (moreButton) {
+    moreButton.hidden = visible.length >= filtered.length;
+    moreButton.textContent = `Vis flere (${Math.min(12, filtered.length - visible.length)})`;
+  }
   renderFavoritesStrip();
 }
 
@@ -872,8 +1135,20 @@ $("#galleryFilters")?.addEventListener('click', event => {
   const button = event.target.closest('[data-gallery-filter]');
   if (!button) return;
   state.galleryFilter = button.dataset.galleryFilter;
+  state.galleryLimit = 12;
   $$('[data-gallery-filter]').forEach(chip => chip.classList.toggle('active', chip === button));
   renderGallery();
+});
+
+$("#showMoreGallery")?.addEventListener("click", () => {
+  state.galleryLimit += 12;
+  renderGallery();
+});
+
+$("#randomGallery")?.addEventListener("click", () => {
+  const choices = filteredGalleryItems();
+  if (!choices.length) return;
+  openGalleryItem(choices[Math.floor(Math.random() * choices.length)].title);
 });
 
 $("#jumpToGallery")?.addEventListener('click', () => {

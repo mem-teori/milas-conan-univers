@@ -1,3 +1,13 @@
+# Milas Conan-univers v0.7
+
+- 65 gallerikort
+- 60 kort med billeder
+- nye filtre: Live, Candids og Photoshoots
+- 12 billeder ad gangen
+- Vis flere og Overrask mig
+
+---
+
 # Milas Conan-univers v0.6 — stort galleri
 
 v0.6 expands the gallery from 10 cards to **34 gallery cards**, including 29 image-based fan-art entries.
