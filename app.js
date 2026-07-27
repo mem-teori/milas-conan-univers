@@ -471,7 +471,8 @@ const galleryItems = [
     caption: "Rød og intim koncertstemning til den tidlige Conan-periode.",
     style: "g1",
     label: "early live era",
-    image: "images/gallery/sunset-season-1.png"
+    image: "images/gallery/sunset-season-1.png",
+    quality: "hd"
   },
   {
     title: "Kid Krow Star Guitar",
@@ -479,7 +480,8 @@ const galleryItems = [
     caption: "Mørk scenestemning, sort guitar og stjernedetalje.",
     style: "g2",
     label: "star guitar",
-    image: "images/gallery/kid-krow-1.png"
+    image: "images/gallery/kid-krow-1.png",
+    quality: "hd"
   },
   {
     title: "Superache Roses",
@@ -487,7 +489,8 @@ const galleryItems = [
     caption: "Roser, levende lys og den store følelsesmæssige Superache-stemning.",
     style: "g3",
     label: "roses + candlelight",
-    image: "images/gallery/superache-1.png"
+    image: "images/gallery/superache-1.png",
+    quality: "hd"
   },
   {
     title: "Found Heaven Gold",
@@ -495,7 +498,8 @@ const galleryItems = [
     caption: "Gyldent scenelys og et mere stort, poleret live-show.",
     style: "g4",
     label: "golden spotlight",
-    image: "images/gallery/found-heaven-1.png"
+    image: "images/gallery/found-heaven-1.png",
+    quality: "hd"
   },
   {
     title: "Wishbone Blue",
@@ -503,7 +507,8 @@ const galleryItems = [
     caption: "Blåt scenelys, guitar og et roligere drømmende udtryk.",
     style: "g5",
     label: "blue live mood",
-    image: "images/gallery/wishbone-1.png"
+    image: "images/gallery/wishbone-1.png",
+    quality: "hd"
   },
   {
     title: "Late Night Confession",
@@ -511,7 +516,8 @@ const galleryItems = [
     caption: "En mørk grafisk fanplakat til natte-spillelisten og quiz-aftenen.",
     style: "g6",
     label: "night confession",
-    image: ""
+    image: "",
+    quality: "graphic"
   },
   {
     title: "This Song Letters",
@@ -519,7 +525,8 @@ const galleryItems = [
     caption: "Et stille og nostalgisk grafisk kort med breve og blå farver.",
     style: "g7",
     label: "letters + blue",
-    image: ""
+    image: "",
+    quality: "graphic"
   },
   {
     title: "Heart Notes",
@@ -527,7 +534,8 @@ const galleryItems = [
     caption: "Et grafisk motiv til favoritmapper, moodboards og collager.",
     style: "g8",
     label: "heart notes",
-    image: ""
+    image: "",
+    quality: "graphic"
   },
   {
     title: "Idle Town Dusk",
@@ -535,7 +543,8 @@ const galleryItems = [
     caption: "Solnedgang og veje ud af byen i et tidligt Conan-inspireret motiv.",
     style: "g9",
     label: "sunset drive",
-    image: ""
+    image: "",
+    quality: "graphic"
   },
   {
     title: "Lonely Dancers Lights",
@@ -543,7 +552,8 @@ const galleryItems = [
     caption: "Lys, fart og dansegulv i et mere showpræget univers.",
     style: "g10",
     label: "dance floor",
-    image: ""
+    image: "",
+    quality: "graphic"
   },
   {
     title: "Ivory Window",
@@ -551,7 +561,8 @@ const galleryItems = [
     caption: "Et lyst og roligt portræt med blød dagslysstemning.",
     style: "g5",
     label: "soft daylight",
-    image: "images/gallery/more/wb-02.jpg"
+    image: "images/gallery/more/wb-02.jpg",
+    quality: "mini"
   },
   {
     title: "Striped Silence",
@@ -559,7 +570,8 @@ const galleryItems = [
     caption: "Sort-hvidt, stille portræt med mørk Kid Krow-følelse.",
     style: "g2",
     label: "monochrome quiet",
-    image: "images/gallery/more/kk-02.jpg"
+    image: "images/gallery/more/kk-02.jpg",
+    quality: "mini"
   },
   {
     title: "Heart Stage",
@@ -567,7 +579,8 @@ const galleryItems = [
     caption: "Rød koncertenergi og et tidligt, ungdommeligt liveudtryk.",
     style: "g1",
     label: "red live",
-    image: "images/gallery/more/ss-02.jpg"
+    image: "images/gallery/more/ss-02.jpg",
+    quality: "mini"
   },
   {
     title: "Sticker Close-up",
@@ -575,7 +588,8 @@ const galleryItems = [
     caption: "Et intenst nærportræt med små hjertedetaljer.",
     style: "g3",
     label: "heart detail",
-    image: "images/gallery/more/sa-02.jpg"
+    image: "images/gallery/more/sa-02.jpg",
+    quality: "mini"
   },
   {
     title: "Red Stripes",
@@ -583,7 +597,8 @@ const galleryItems = [
     caption: "Et mørkt og eftertænksomt portræt i røde og sorte striber.",
     style: "g2",
     label: "red stripes",
-    image: "images/gallery/more/kk-03.jpg"
+    image: "images/gallery/more/kk-03.jpg",
+    quality: "mini"
   },
   {
     title: "Blue Guitar Stage",
@@ -591,7 +606,8 @@ const galleryItems = [
     caption: "Blåt scenelys og guitar i et stort liveøjeblik.",
     style: "g5",
     label: "blue stage",
-    image: "images/gallery/more/wb-03.jpg"
+    image: "images/gallery/more/wb-03.jpg",
+    quality: "mini"
   },
   {
     title: "Golden Piano",
@@ -599,7 +615,8 @@ const galleryItems = [
     caption: "En varm silhuet ved klaveret i gyldent lys.",
     style: "g4",
     label: "golden piano",
-    image: "images/gallery/more/fh-02.jpg"
+    image: "images/gallery/more/fh-02.jpg",
+    quality: "mini"
   },
   {
     title: "Heart Face",
@@ -607,7 +624,8 @@ const galleryItems = [
     caption: "Et enkelt portræt med små røde hjertemarkeringer.",
     style: "g3",
     label: "heart portrait",
-    image: "images/gallery/more/sa-03.jpg"
+    image: "images/gallery/more/sa-03.jpg",
+    quality: "mini"
   },
   {
     title: "Warm Candid",
@@ -615,7 +633,8 @@ const galleryItems = [
     caption: "Et varmt og mere afslappet portræt med tidlig fan-archive-stemning.",
     style: "g1",
     label: "warm candid",
-    image: "images/gallery/more/ss-03.jpg"
+    image: "images/gallery/more/ss-03.jpg",
+    quality: "mini"
   },
   {
     title: "Red Guitar Night",
@@ -623,7 +642,8 @@ const galleryItems = [
     caption: "Rød livebelysning og guitar i en tæt koncertscene.",
     style: "g1",
     label: "night guitar",
-    image: "images/gallery/more/ss-04.jpg"
+    image: "images/gallery/more/ss-04.jpg",
+    quality: "mini"
   },
   {
     title: "Flowers Studio",
@@ -631,7 +651,8 @@ const galleryItems = [
     caption: "Blomster og et blødt studioportræt i Superache-farver.",
     style: "g3",
     label: "flowers studio",
-    image: "images/gallery/more/sa-04.jpg"
+    image: "images/gallery/more/sa-04.jpg",
+    quality: "mini"
   },
   {
     title: "Side Profile",
@@ -639,7 +660,8 @@ const galleryItems = [
     caption: "Et mørkt sideportræt med enkelt, filmisk lys.",
     style: "g2",
     label: "cinematic profile",
-    image: "images/gallery/more/kk-04.jpg"
+    image: "images/gallery/more/kk-04.jpg",
+    quality: "mini"
   },
   {
     title: "Retro Suit",
@@ -647,7 +669,8 @@ const galleryItems = [
     caption: "Et mere poleret og retropræget portræt i jakkesæt.",
     style: "g4",
     label: "retro suit",
-    image: "images/gallery/more/fh-03.jpg"
+    image: "images/gallery/more/fh-03.jpg",
+    quality: "mini"
   },
   {
     title: "Gold Vocal",
@@ -655,7 +678,8 @@ const galleryItems = [
     caption: "Gyldent scenelys og et stort vokaløjeblik.",
     style: "g4",
     label: "gold vocal",
-    image: "images/gallery/more/fh-04.jpg"
+    image: "images/gallery/more/fh-04.jpg",
+    quality: "mini"
   },
   {
     title: "Black-and-white Thought",
@@ -663,7 +687,8 @@ const galleryItems = [
     caption: "Et sort-hvidt nærportræt med rolig intensitet.",
     style: "g2",
     label: "black and white",
-    image: "images/gallery/more/kk-05.jpg"
+    image: "images/gallery/more/kk-05.jpg",
+    quality: "mini"
   },
   {
     title: "Blue Hands Up",
@@ -671,7 +696,8 @@ const galleryItems = [
     caption: "Et bredt livebillede i blå toner med armene løftet.",
     style: "g5",
     label: "blue live",
-    image: "images/gallery/more/wb-04.jpg"
+    image: "images/gallery/more/wb-04.jpg",
+    quality: "mini"
   },
   {
     title: "Autumn Walk",
@@ -679,7 +705,8 @@ const galleryItems = [
     caption: "Et udendørs portræt med blød efterårsstemning.",
     style: "g1",
     label: "autumn candid",
-    image: "images/gallery/more/ss-05.jpg"
+    image: "images/gallery/more/ss-05.jpg",
+    quality: "mini"
   },
   {
     title: "Black-and-white Guitar",
@@ -687,7 +714,8 @@ const galleryItems = [
     caption: "Et tæt sort-hvidt guitarøjeblik.",
     style: "g2",
     label: "guitar close-up",
-    image: "images/gallery/more/kk-06.jpg"
+    image: "images/gallery/more/kk-06.jpg",
+    quality: "mini"
   },
   {
     title: "Archive Tee",
@@ -695,7 +723,8 @@ const galleryItems = [
     caption: "Et fan-archive-inspireret portræt med guitar og grafisk T-shirt.",
     style: "g2",
     label: "archive tee",
-    image: "images/gallery/more/kk-07.jpg"
+    image: "images/gallery/more/kk-07.jpg",
+    quality: "mini"
   },
   {
     title: "Dark Hoodie",
@@ -703,7 +732,8 @@ const galleryItems = [
     caption: "Et mørkt, enkelt hoodie-portræt.",
     style: "g2",
     label: "dark hoodie",
-    image: "images/gallery/more/kk-08.jpg"
+    image: "images/gallery/more/kk-08.jpg",
+    quality: "mini"
   },
   {
     title: "Red Sweater",
@@ -711,7 +741,8 @@ const galleryItems = [
     caption: "Et roligt portræt i dyb rød farve.",
     style: "g3",
     label: "red sweater",
-    image: "images/gallery/more/sa-05.jpg"
+    image: "images/gallery/more/sa-05.jpg",
+    quality: "mini"
   },
   {
     title: "Blue Festival",
@@ -719,7 +750,8 @@ const galleryItems = [
     caption: "Et blåt festivaløjeblik med guitar og scenelys.",
     style: "g5",
     label: "blue festival",
-    image: "images/gallery/more/wb-05.jpg"
+    image: "images/gallery/more/wb-05.jpg",
+    quality: "mini"
   },
   {
     title: "Heart Hands",
@@ -727,7 +759,8 @@ const galleryItems = [
     caption: "Et afslappet candid-øjeblik med hænder formet som et hjerte.",
     style: "g5",
     label: "heart hands",
-    image: "images/gallery/more/wb-06.jpg"
+    image: "images/gallery/more/wb-06.jpg",
+    quality: "mini"
   },
   {
     title: "Midnight Guitar Suit",
@@ -735,7 +768,8 @@ const galleryItems = [
     caption: "Sort-hvid guitar og et mere elegant sceneudtryk.",
     style: "g4",
     label: "midnight suit",
-    image: "images/gallery/more/fh-05.jpg"
+    image: "images/gallery/more/fh-05.jpg",
+    quality: "mini"
   },
   {
     title: "Blue Star Guitar",
@@ -743,7 +777,8 @@ const galleryItems = [
     caption: "Blåt scenelys og sort guitar i et stort liveøjeblik.",
     style: "g6",
     label: "blue live",
-    image: "images/gallery/v07/live-blue-guitar.jpg"
+    image: "images/gallery/v07/live-blue-guitar.jpg",
+    quality: "mini"
   },
   {
     title: "Midnight Studio",
@@ -751,7 +786,8 @@ const galleryItems = [
     caption: "Et mørkt, klassisk studioportræt.",
     style: "g11",
     label: "dark studio",
-    image: "images/gallery/v07/photo-dark-studio.jpg"
+    image: "images/gallery/v07/photo-dark-studio.jpg",
+    quality: "mini"
   },
   {
     title: "Grey Suit Archive",
@@ -759,7 +795,8 @@ const galleryItems = [
     caption: "Et elegant portræt i grå jakkestil.",
     style: "g11",
     label: "grey archive",
-    image: "images/gallery/v07/photo-grey-suit.jpg"
+    image: "images/gallery/v07/photo-grey-suit.jpg",
+    quality: "mini"
   },
   {
     title: "Red Candle Close-up",
@@ -767,7 +804,8 @@ const galleryItems = [
     caption: "Røde toner, blomster og levende lys.",
     style: "g3",
     label: "red candle",
-    image: "images/gallery/v07/superache-red-candle.jpg"
+    image: "images/gallery/v07/superache-red-candle.jpg",
+    quality: "mini"
   },
   {
     title: "Purple Stage Guitar",
@@ -775,7 +813,8 @@ const galleryItems = [
     caption: "Lilla koncertlys og et energisk guitarøjeblik.",
     style: "g6",
     label: "purple stage",
-    image: "images/gallery/v07/live-purple-guitar.jpg"
+    image: "images/gallery/v07/live-purple-guitar.jpg",
+    quality: "mini"
   },
   {
     title: "White Wings Stage",
@@ -783,7 +822,8 @@ const galleryItems = [
     caption: "En drømmende fan-fantasi med scenevinger.",
     style: "g6",
     label: "stage fantasy",
-    image: "images/gallery/v07/live-white-wings.jpg"
+    image: "images/gallery/v07/live-white-wings.jpg",
+    quality: "mini"
   },
   {
     title: "Café Notebook",
@@ -791,7 +831,8 @@ const galleryItems = [
     caption: "Et roligt caféøjeblik med notesbog.",
     style: "g7",
     label: "café candid",
-    image: "images/gallery/v07/candid-cafe.jpg"
+    image: "images/gallery/v07/candid-cafe.jpg",
+    quality: "mini"
   },
   {
     title: "Garden White Shirt",
@@ -799,7 +840,8 @@ const galleryItems = [
     caption: "Et blødt udendørs portræt i grønne omgivelser.",
     style: "g7",
     label: "garden candid",
-    image: "images/gallery/v07/candid-garden.jpg"
+    image: "images/gallery/v07/candid-garden.jpg",
+    quality: "mini"
   },
   {
     title: "Red Backstage Glow",
@@ -807,7 +849,8 @@ const galleryItems = [
     caption: "Rød backstage-stemning med tidlig liveenergi.",
     style: "g1",
     label: "red backstage",
-    image: "images/gallery/v07/sunset-red-backstage.jpg"
+    image: "images/gallery/v07/sunset-red-backstage.jpg",
+    quality: "mini"
   },
   {
     title: "Green Shirt Portrait",
@@ -815,7 +858,8 @@ const galleryItems = [
     caption: "Et afslappet portræt i grønne toner.",
     style: "g7",
     label: "green candid",
-    image: "images/gallery/v07/candid-green-shirt.jpg"
+    image: "images/gallery/v07/candid-green-shirt.jpg",
+    quality: "mini"
   },
   {
     title: "Blue Wings Guitar",
@@ -823,7 +867,8 @@ const galleryItems = [
     caption: "Et blåt fan-fantasi-motiv med guitar og vinger.",
     style: "g6",
     label: "blue fantasy",
-    image: "images/gallery/v07/live-blue-wings.jpg"
+    image: "images/gallery/v07/live-blue-wings.jpg",
+    quality: "mini"
   },
   {
     title: "Warm Window Portrait",
@@ -831,7 +876,8 @@ const galleryItems = [
     caption: "Et filmisk portræt i varmt vindueslys.",
     style: "g11",
     label: "warm window",
-    image: "images/gallery/v07/photo-warm-window.jpg"
+    image: "images/gallery/v07/photo-warm-window.jpg",
+    quality: "mini"
   },
   {
     title: "Candlelight Tee",
@@ -839,7 +885,8 @@ const galleryItems = [
     caption: "Et afslappet motiv i varmt levende lys.",
     style: "g7",
     label: "candle candid",
-    image: "images/gallery/v07/candid-candle-tee.jpg"
+    image: "images/gallery/v07/candid-candle-tee.jpg",
+    quality: "mini"
   },
   {
     title: "White Jacket Corridor",
@@ -847,7 +894,8 @@ const galleryItems = [
     caption: "Et rent modeportræt i en mørk korridor.",
     style: "g11",
     label: "white jacket",
-    image: "images/gallery/v07/photo-white-jacket.jpg"
+    image: "images/gallery/v07/photo-white-jacket.jpg",
+    quality: "mini"
   },
   {
     title: "Sunset Season Poster",
@@ -855,7 +903,8 @@ const galleryItems = [
     caption: "Et lodret rødt æraportræt til galleri eller print.",
     style: "g1",
     label: "era poster",
-    image: "images/gallery/v07/era-sunset-poster.jpg"
+    image: "images/gallery/v07/era-sunset-poster.jpg",
+    quality: "mini"
   },
   {
     title: "Kid Krow Poster",
@@ -863,7 +912,8 @@ const galleryItems = [
     caption: "Et sort-hvidt Kid Krow-kort med klassisk arkivlook.",
     style: "g2",
     label: "era poster",
-    image: "images/gallery/v07/era-kid-krow-poster.jpg"
+    image: "images/gallery/v07/era-kid-krow-poster.jpg",
+    quality: "mini"
   },
   {
     title: "Superache Poster",
@@ -871,7 +921,8 @@ const galleryItems = [
     caption: "Roser og dybe røde farver samlet som æraplakat.",
     style: "g3",
     label: "era poster",
-    image: "images/gallery/v07/era-superache-poster.jpg"
+    image: "images/gallery/v07/era-superache-poster.jpg",
+    quality: "mini"
   },
   {
     title: "Found Heaven Poster",
@@ -879,7 +930,8 @@ const galleryItems = [
     caption: "Gyldent scenelys i en lodret Found Heaven-plakat.",
     style: "g4",
     label: "era poster",
-    image: "images/gallery/v07/era-found-heaven-poster.jpg"
+    image: "images/gallery/v07/era-found-heaven-poster.jpg",
+    quality: "mini"
   },
   {
     title: "Wishbone Poster",
@@ -887,7 +939,8 @@ const galleryItems = [
     caption: "Et blåt Wishbone-kort med vokal og scenelys.",
     style: "g5",
     label: "era poster",
-    image: "images/gallery/v07/era-wishbone-poster.jpg"
+    image: "images/gallery/v07/era-wishbone-poster.jpg",
+    quality: "mini"
   },
   {
     title: "Crimson Favourite",
@@ -895,7 +948,8 @@ const galleryItems = [
     caption: "Et varmt rødt favoritportræt.",
     style: "g3",
     label: "Mila favourite",
-    image: "images/gallery/v07/fav-red-suit.jpg"
+    image: "images/gallery/v07/fav-red-suit.jpg",
+    quality: "mini"
   },
   {
     title: "White Tee Favourite",
@@ -903,7 +957,8 @@ const galleryItems = [
     caption: "Et afslappet fan-archive-portræt.",
     style: "g7",
     label: "Mila favourite",
-    image: "images/gallery/v07/fav-white-tee.jpg"
+    image: "images/gallery/v07/fav-white-tee.jpg",
+    quality: "mini"
   },
   {
     title: "Monochrome Favourite",
@@ -911,7 +966,8 @@ const galleryItems = [
     caption: "Et sort-hvidt favoritkort med mørk stemning.",
     style: "g2",
     label: "Mila favourite",
-    image: "images/gallery/v07/fav-mono-suit.jpg"
+    image: "images/gallery/v07/fav-mono-suit.jpg",
+    quality: "mini"
   },
   {
     title: "Golden Brown Favourite",
@@ -919,7 +975,8 @@ const galleryItems = [
     caption: "Et varmt gyldent portræt til favoritvæggen.",
     style: "g4",
     label: "Mila favourite",
-    image: "images/gallery/v07/fav-brown-sweater.jpg"
+    image: "images/gallery/v07/fav-brown-sweater.jpg",
+    quality: "mini"
   },
   {
     title: "Sunset Season Collection",
@@ -927,7 +984,8 @@ const galleryItems = [
     caption: "Seks små røde og varme motiver samlet i ét archive-kort.",
     style: "g1",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-sunset.jpg"
+    image: "images/gallery/v07/collage-sunset.jpg",
+    quality: "mini"
   },
   {
     title: "Kid Krow Collection",
@@ -935,7 +993,8 @@ const galleryItems = [
     caption: "En sort-hvid mini-samling til Kid Krow-arkivet.",
     style: "g2",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-kid-krow.jpg"
+    image: "images/gallery/v07/collage-kid-krow.jpg",
+    quality: "mini"
   },
   {
     title: "Superache Collection",
@@ -943,7 +1002,8 @@ const galleryItems = [
     caption: "Roser, rødt lys og portrætter samlet i én collage.",
     style: "g3",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-superache.jpg"
+    image: "images/gallery/v07/collage-superache.jpg",
+    quality: "mini"
   },
   {
     title: "Found Heaven Collection",
@@ -951,7 +1011,8 @@ const galleryItems = [
     caption: "Gyldne live- og portrætmotiver samlet i et æraark.",
     style: "g4",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-found-heaven.jpg"
+    image: "images/gallery/v07/collage-found-heaven.jpg",
+    quality: "mini"
   },
   {
     title: "Wishbone Collection",
@@ -959,7 +1020,8 @@ const galleryItems = [
     caption: "En blå samling med guitar, scene og portrætter.",
     style: "g5",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-wishbone.jpg"
+    image: "images/gallery/v07/collage-wishbone.jpg",
+    quality: "mini"
   },
   {
     title: "Live Collection",
@@ -967,7 +1029,8 @@ const galleryItems = [
     caption: "Lilla og blå koncertøjeblikke samlet i ét kort.",
     style: "g6",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-live.jpg"
+    image: "images/gallery/v07/collage-live.jpg",
+    quality: "mini"
   },
   {
     title: "Candid Collection",
@@ -975,7 +1038,8 @@ const galleryItems = [
     caption: "Udendørs og afslappede øjeblikke samlet som miniarkiv.",
     style: "g7",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-candids.jpg"
+    image: "images/gallery/v07/collage-candids.jpg",
+    quality: "mini"
   },
   {
     title: "Photoshoot Collection",
@@ -983,7 +1047,8 @@ const galleryItems = [
     caption: "Mode- og studioportrætter samlet i én billedvæg.",
     style: "g11",
     label: "six-image collection",
-    image: "images/gallery/v07/collage-photoshoots.jpg"
+    image: "images/gallery/v07/collage-photoshoots.jpg",
+    quality: "mini"
   }
 ];
 
@@ -1057,7 +1122,7 @@ function renderGallery() {
   const visible = filtered.slice(0, state.galleryLimit);
 
   grid.innerHTML = visible.map(item => `
-    <article class="gallery-card">
+    <article class="gallery-card quality-${item.quality}">
       <button class="gallery-visual ${item.style}" data-open-gallery="${escapeHtml(item.title)}" data-gallery-visual="${escapeHtml(item.title)}" aria-label="Åbn ${escapeHtml(item.title)}">
         <strong>${escapeHtml(item.title.toUpperCase())}</strong>
         <small>${escapeHtml(item.label)}</small>
@@ -1065,6 +1130,7 @@ function renderGallery() {
       <div class="gallery-card-copy">
         <div class="gallery-meta">
           <span>${escapeHtml(item.era)}</span>
+          <span class="quality-badge ${item.quality}">${item.quality === "hd" ? "HD" : item.quality === "mini" ? "MINI" : "GRAFIK"}</span>
           <span>${state.favoriteGallery.has(item.title) ? '♥ gemt' : '☆ klar til favorit'}</span>
         </div>
         <h4>${escapeHtml(item.title)}</h4>
@@ -1072,7 +1138,7 @@ function renderGallery() {
         <div class="gallery-actions">
           <button data-open-gallery="${escapeHtml(item.title)}">Åbn</button>
           <button data-favorite-gallery="${escapeHtml(item.title)}" class="${state.favoriteGallery.has(item.title) ? 'active-fav' : ''}">${state.favoriteGallery.has(item.title) ? 'Favorit' : 'Hjerte'}</button>
-          <button data-gallery-print="${escapeHtml(item.title)}">Til print</button>
+          <button data-gallery-print="${escapeHtml(item.title)}">${item.quality === "mini" ? "Til collage" : "Til print"}</button>
         </div>
       </div>
     </article>`).join("");
@@ -1108,12 +1174,20 @@ function openGalleryItem(title) {
   const item = galleryItems.find(entry => entry.title === title);
   if (!item) return;
   state.currentGalleryItem = item;
-  $("#modalVisual").className = `modal-visual gallery-visual ${item.style}`;
+  $("#modalVisual").className = `modal-visual gallery-visual ${item.style} quality-${item.quality}`;
   $("#modalVisual").innerHTML = `<strong>${escapeHtml(item.title.toUpperCase())}</strong><small>${escapeHtml(item.label)}</small>`;
   applyGalleryImage($("#modalVisual"), item);
-  $("#modalEra").textContent = item.era;
+  $("#galleryModal")?.querySelector(".gallery-modal-card")?.classList.toggle("mini-source", item.quality === "mini");
+  $("#galleryModal")?.querySelector(".gallery-modal-card")?.classList.toggle("hd-source", item.quality === "hd");
+  $("#modalEra").textContent = `${item.era} · ${item.quality === "hd" ? "HD" : item.quality === "mini" ? "MINIARKIV" : "GRAFIK"}`;
   $("#modalTitle").textContent = item.title;
-  $("#modalCaption").textContent = item.caption;
+  const qualityNote = item.quality === "mini"
+    ? " Dette motiv kommer fra en samlet billedvæg og vises derfor i en mindre størrelse for at bevare skarpheden."
+    : item.quality === "hd"
+      ? " Dette er et højopløseligt motiv, der egner sig bedst til stor visning og print."
+      : "";
+  $("#modalCaption").textContent = item.caption + qualityNote;
+  $("#modalPrint").textContent = item.quality === "mini" ? "Send til lille collage" : "Send til print";
   $("#modalFavorite").textContent = state.favoriteGallery.has(item.title) ? 'Fjern favorit' : 'Gem som favorit';
   $("#galleryModal").classList.add('open');
   $("#galleryModal").setAttribute('aria-hidden', 'false');
@@ -1128,7 +1202,10 @@ function addGalleryItemToPrint(title) {
   state.selectedPosters.add(title);
   renderPrintSheet();
   routeTo('print');
-  showToast('Motivet er sendt videre til printarket');
+  const item = galleryItems.find(entry => entry.title === title);
+  showToast(item?.quality === "mini"
+    ? "Miniarkiv-motivet er sendt til print — brug helst et 4-billeders collage-layout"
+    : "Motivet er sendt videre til printarket");
 }
 
 $("#galleryFilters")?.addEventListener('click', event => {

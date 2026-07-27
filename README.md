@@ -1,3 +1,19 @@
+# Milas Conan-univers v0.8 — skarphedsrettelse
+
+Denne version retter forskellen mellem de oprindelige højopløselige billeder og de mindre billeder, der blev beskåret fra samlede billedvægge.
+
+## Nyt
+- HD, MINI og GRAFIK-mærkning
+- miniarkiv-billeder åbner i en mindre modal
+- miniarkiv bruger `background-size: contain` i stor visning
+- moderat kontrast- og skarphedsforbedring uden aggressiv AI-opskalering
+- HD-billeder får større visning
+- miniarkiv sendes primært til mindre collageprint
+
+Vigtigt: Et lille kildebillede kan ikke få ægte nye detaljer alene gennem et skarphedsfilter. Derfor undgår v0.8 at blæse de små kilder unødigt op.
+
+---
+
 # Milas Conan-univers v0.7
 
 - 65 gallerikort
