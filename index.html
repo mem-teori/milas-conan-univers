@@ -95,61 +95,110 @@
 
     <section id="conan" class="view">
       <div class="section-heading">
-        <span class="eyebrow">Musikbibliotek</span>
-        <h2>Conan gennem æraerne</h2>
-        <p>Et første visuelt udkast. Den endelige side får faktatjekket biografi, komplette tracklister og billeder med tydelige kilder.</p>
+        <span class="eyebrow">Conan archive</span>
+        <h2>Conan Gray — billeder, æraer og favoritter</h2>
+        <p>Her er v0.3 af Conan-delen: mere visuelt archive-look, tydelige albumæraer, et større galleri og plads til Milas favoritter. Motiverne her er stadig designpladsholdere og fan-grafik, indtil vi vælger de endelige Conan-billeder.</p>
       </div>
 
-      <div class="timeline">
-        <article class="era sunset">
-          <div class="era-art"><span>2018</span><strong>Sunset<br>Season</strong></div>
-          <div class="era-copy">
-            <h3>Småbydrømme og begyndelsen</h3>
-            <p>YouTube, “Idle Town”, nostalgi og de første sange, der voksede ud af livet i Georgetown, Texas.</p>
-            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+      <section class="archive-hero">
+        <div class="archive-poster">
+          <div class="archive-stamp">MILA'S PICK</div>
+          <div class="archive-poster-visual archive-hero-visual">
+            <span>CONAN<br>GRAY</span>
+            <small>fan archive edition</small>
           </div>
-        </article>
+        </div>
+        <div class="archive-copy">
+          <span class="eyebrow">Velkomstvæg</span>
+          <h3>Et sted til billeder, musik og print</h3>
+          <p>Før vi kobler alt live sammen med Firebase, gør vi Conan-universet mere “rigtigt”: galleri, æra-farver, favoritter og printvenlige motiver, så siden føles som Milas eget lille fan-arkiv.</p>
+          <div class="button-row compact-row">
+            <button class="primary" data-route="print">Åbn printstudiet</button>
+            <button class="secondary" id="jumpToGallery">Hop til galleriet</button>
+          </div>
+          <div class="quick-facts">
+            <article><span>Startede med</span><strong>YouTube + egne sange</strong></article>
+            <article><span>Debutalbum</span><strong>Kid Krow</strong></article>
+            <article><span>Stemning</span><strong>Æraer, følelser og stærke visuals</strong></article>
+          </div>
+        </div>
+      </section>
 
-        <article class="era kidkrow">
-          <div class="era-art"><span>2020</span><strong>KID<br>KROW</strong></div>
-          <div class="era-copy">
-            <h3>Gennembruddet</h3>
-            <p>Albummet med blandt andet “Maniac”, “Heather”, “The Story” og “Wish You Were Sober”.</p>
-            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+      <section class="era-gallery-wrap">
+        <div class="subheading-row">
+          <div>
+            <span class="eyebrow">Albumæraer</span>
+            <h3>Farver, stemninger og signatursange</h3>
           </div>
-        </article>
+        </div>
+        <div class="era-gallery">
+          <article class="era-card sunset-era">
+            <span class="era-year">2018</span>
+            <h4>Sunset Season</h4>
+            <p>Solnedgang, ungdom og starten på det hele.</p>
+            <small>Idle Town · Generation Why · Crush Culture</small>
+          </article>
+          <article class="era-card kid-era">
+            <span class="era-year">2020</span>
+            <h4>Kid Krow</h4>
+            <p>Mørkt gennembrud og følelsen af at være helt inde i sangene.</p>
+            <small>Heather · Maniac · The Story</small>
+          </article>
+          <article class="era-card super-era">
+            <span class="era-year">2022</span>
+            <h4>Superache</h4>
+            <p>Røde roser, sårbarhed og store hjerte-sange.</p>
+            <small>Memories · Yours · People Watching</small>
+          </article>
+          <article class="era-card heaven-era">
+            <span class="era-year">2024</span>
+            <h4>Found Heaven</h4>
+            <p>Retrolys, mere show og en større scenefølelse.</p>
+            <small>Alley Rose · Lonely Dancers</small>
+          </article>
+          <article class="era-card wishbone-era">
+            <span class="era-year">2025</span>
+            <h4>Wishbone</h4>
+            <p>Blå nostalgi og et mere roligt, drømmende udtryk.</p>
+            <small>This Song · Vodka Cranberry · Caramel</small>
+          </article>
+        </div>
+      </section>
 
-        <article class="era superache">
-          <div class="era-art"><span>2022</span><strong>SUPER<br>ACHE</strong></div>
-          <div class="era-copy">
-            <h3>Store følelser og røde roser</h3>
-            <p>Et mere sårbart univers med “Memories”, “Yours”, “Disaster” og “People Watching”.</p>
-            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+      <section class="favorites-spotlight">
+        <div class="subheading-row">
+          <div>
+            <span class="eyebrow">Mila’s favourites</span>
+            <h3>Tre hurtige favoritpladser</h3>
           </div>
-        </article>
+          <p class="small-note">I denne version kan favoritmarkeringer gemmes lokalt i browseren.</p>
+        </div>
+        <div id="favoritesStrip" class="favorites-strip"></div>
+      </section>
 
-        <article class="era heaven">
-          <div class="era-art"><span>2024</span><strong>FOUND<br>HEAVEN</strong></div>
-          <div class="era-copy">
-            <h3>Retrolys og ny lyd</h3>
-            <p>Et stærkt 70’er- og 80’er-inspireret udtryk med blandt andet “Alley Rose” og “Lonely Dancers”.</p>
-            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+      <section class="gallery-archive" id="galleryAnchor">
+        <div class="subheading-row">
+          <div>
+            <span class="eyebrow">Galleri</span>
+            <h3>Conan-billedvæg</h3>
           </div>
-        </article>
-
-        <article class="era wishbone">
-          <div class="era-art"><span>2025</span><strong>WISH<br>BONE</strong></div>
-          <div class="era-copy">
-            <h3>Blå nostalgi og nye historier</h3>
-            <p>Den seneste albumæra i materialet med blandt andet “This Song”, “Vodka Cranberry” og “Caramel”.</p>
-            <button class="text-button" data-toast="Albumside kommer i næste version">Åbn æra →</button>
+          <div class="gallery-controls" id="galleryFilters">
+            <button class="active" data-gallery-filter="alle">Alle</button>
+            <button data-gallery-filter="Sunset Season">Sunset Season</button>
+            <button data-gallery-filter="Kid Krow">Kid Krow</button>
+            <button data-gallery-filter="Superache">Superache</button>
+            <button data-gallery-filter="Found Heaven">Found Heaven</button>
+            <button data-gallery-filter="Wishbone">Wishbone</button>
+            <button data-gallery-filter="favoritter">Favoritter</button>
           </div>
-        </article>
-      </div>
+        </div>
+        <p class="small-note">Klik på et motiv for at åbne det stort. Brug hjertet til at gemme favoritter og stjernen til at sende motivet videre til printarket.</p>
+        <div id="galleryGrid" class="gallery-grid"></div>
+      </section>
 
       <aside class="source-note">
-        <strong>Om indholdet</strong>
-        <p>Dette udkast bruger kun korte, selvskrevne resuméer. Rigtige billeder og fakta indsættes med kilde- og rettighedstjek før offentliggørelse.</p>
+        <strong>Næste visuelle skridt</strong>
+        <p>Her er strukturen nu på plads. Når vi vælger konkrete Conan-billeder, kan vi lægge dem ind i et egentligt <code>images/</code>-bibliotek og koble dem direkte til galleriet og printstudiet.</p>
       </aside>
     </section>
 
@@ -428,6 +477,23 @@
       </div>
     </section>
   </main>
+
+  
+  <div id="galleryModal" class="gallery-modal" aria-hidden="true">
+    <div class="gallery-modal-card">
+      <button id="closeGalleryModal" class="modal-close" aria-label="Luk billede">×</button>
+      <div id="modalVisual" class="modal-visual"></div>
+      <div class="modal-copy">
+        <span id="modalEra" class="eyebrow">—</span>
+        <h3 id="modalTitle">—</h3>
+        <p id="modalCaption">—</p>
+        <div class="button-row compact-row">
+          <button id="modalFavorite" class="secondary compact">Gem som favorit</button>
+          <button id="modalPrint" class="primary compact">Send til print</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 

@@ -1,3 +1,7 @@
+# Milas Conan-univers v0.3
+
+Denne version udvider Conan-delen med galleri, æra-kort, favoritter og lysboksvisning.
+
 # Milas Conan-univers v0.2
 
 GitHub Pages-klar prøveudgave med:
