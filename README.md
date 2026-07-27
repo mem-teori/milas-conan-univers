@@ -1,3 +1,17 @@
+# Milas Conan-univers v0.10 — fuld musikside
+
+Nyt i v0.10:
+
+- selvstændig Musik-side i hovedmenuen
+- albumfaner for Sunset Season, Kid Krow, Superache, Found Heaven, Wishbone og Wishbone Deluxe
+- komplette tracklister
+- officielle Spotify-afspillere
+- YouTube- og Spotify-knapper ved hver sang
+- Mila’s top 5 gemmes lokalt i browseren
+- Wishbone Deluxe 2026 er med som den nyeste fane
+
+---
+
 # Milas Conan-univers v0.9 — musiklinks
 
 Nyt i v0.9:

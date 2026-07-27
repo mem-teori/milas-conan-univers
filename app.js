@@ -14,7 +14,9 @@ const state = {
   galleryFilter: "bedste",
   favoriteGallery: new Set(JSON.parse(localStorage.getItem("milaGalleryFavorites") || "[\"Kid Krow Star Guitar\", \"Wishbone Blue\", \"Superache Roses\"]")),
   currentGalleryItem: null,
-  galleryLimit: 12
+  galleryLimit: 12,
+  activeMusicAlbum: "sunset",
+  musicFavorites: JSON.parse(localStorage.getItem("milaMusicFavorites") || "[]")
 };
 
 const quizQuestions = [
@@ -389,6 +391,8 @@ $("#ideaForm").addEventListener("submit", event => {
   renderNotes();
 renderHeroArchive();
 renderGallery();
+renderMusicAlbum();
+renderMusicFavorites();
   showToast("Tanken er fanget");
 });
 
@@ -432,6 +436,8 @@ function renderNotes() {
     renderNotes();
 renderHeroArchive();
 renderGallery();
+renderMusicAlbum();
+renderMusicFavorites();
   }));
   $$("[data-promote]").forEach(button => button.addEventListener("click", () => {
     const note = state.notes.find(n => n.id === button.dataset.promote);
@@ -440,6 +446,8 @@ renderGallery();
     renderNotes();
 renderHeroArchive();
 renderGallery();
+renderMusicAlbum();
+renderMusicFavorites();
     showToast(note?.project ? "Flyttet til Projektbordet" : "Fjernet fra Projektbordet");
   }));
 }
@@ -1236,10 +1244,6 @@ $("#randomGallery")?.addEventListener("click", () => {
   openGalleryItem(choices[Math.floor(Math.random() * choices.length)].title);
 });
 
-$("#jumpToMusic")?.addEventListener("click", () => {
-  $("#musicAnchor")?.scrollIntoView({ behavior: "smooth", block: "start" });
-});
-
 $("#jumpToGallery")?.addEventListener('click', () => {
   $("#galleryAnchor")?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 });
@@ -1258,14 +1262,173 @@ $("#modalPrint")?.addEventListener('click', () => {
   addGalleryItemToPrint(state.currentGalleryItem.title);
 });
 
+
+const musicAlbums = [{"id": "sunset", "title": "Sunset Season", "year": "2018", "kind": "EP", "theme": "sunset", "spotify": "https://open.spotify.com/album/16pubXUlqRziVWRsT6lLNz", "embed": "https://open.spotify.com/embed/album/16pubXUlqRziVWRsT6lLNz?utm_source=generator", "note": "Begyndelsen: småby, ungdom, længsel og tidlige Conan-fortællinger.", "tracks": [["Idle Town", "3:57"], ["Generation Why", "3:39"], ["Crush Culture", "3:24"], ["Greek God", "3:56"], ["Lookalike", "3:40"]]}, {"id": "kid", "title": "Kid Krow", "year": "2020", "kind": "Album", "theme": "kid", "spotify": "https://open.spotify.com/album/2CMlkzFI2oDAy5MbyV7OV5", "embed": "https://open.spotify.com/embed/album/2CMlkzFI2oDAy5MbyV7OV5?utm_source=generator", "note": "Det mørke gennembrudsalbum med blandt andet Heather og Maniac.", "tracks": [["Comfort Crowd", "2:54"], ["Wish You Were Sober", "2:48"], ["Maniac", "3:05"], ["(Online Love)", "0:37"], ["Checkmate", "2:28"], ["The Cut That Always Bleeds", "3:51"], ["Fight or Flight", "2:51"], ["Affluenza", "3:19"], ["(Can We Be Friends?)", "0:57"], ["Heather", "3:18"], ["Little League", "3:14"], ["The Story", "4:05"]]}, {"id": "superache", "title": "Superache", "year": "2022", "kind": "Album", "theme": "super", "spotify": "https://open.spotify.com/album/7FC09mQFRxQnKhNXDikU6p", "embed": "https://open.spotify.com/embed/album/7FC09mQFRxQnKhNXDikU6p?utm_source=generator", "note": "Roser, hjerteknus og sange, der føles som breve, man næsten ikke tør sende.", "tracks": [["Movies", "3:34"], ["People Watching", "2:38"], ["Disaster", "2:33"], ["Best Friend", "2:28"], ["Astronomy", "4:03"], ["Yours", "3:24"], ["Jigsaw", "3:28"], ["Family Line", "3:36"], ["Summer Child", "2:59"], ["Footnote", "3:44"], ["Memories", "4:08"], ["The Exit", "3:41"]]}, {"id": "heaven", "title": "Found Heaven", "year": "2024", "kind": "Album", "theme": "heaven", "spotify": "https://open.spotify.com/album/39gMxRpFKgIVvw3krIIam5", "embed": "https://open.spotify.com/embed/album/39gMxRpFKgIVvw3krIIam5?utm_source=generator", "note": "Retro-pop, stærkt scenelys og en mere storladen visuel æra.", "tracks": [["Found Heaven", "2:57"], ["Never Ending Song", "2:34"], ["Fainted Love", "2:50"], ["Lonely Dancers", "2:28"], ["Alley Rose", "3:28"], ["The Final Fight", "2:09"], ["Miss You", "2:23"], ["Bourgeoisieses", "2:31"], ["Forever With Me", "3:35"], ["Eye Of The Night", "2:21"], ["Boys & Girls", "2:22"], ["Killing Me", "3:24"], ["Winner", "3:36"]]}, {"id": "wishbone", "title": "Wishbone", "year": "2025", "kind": "Album", "theme": "wishbone", "spotify": "https://open.spotify.com/album/6xg3zSgRcJDnPagx8cmXeA", "embed": "https://open.spotify.com/embed/album/1Q0kTJx8DrQd8RJW9L7eIN?utm_source=generator", "note": "Blå nostalgi, kærlighed og et nyt personligt kapitel.", "tracks": [["Actor", "3:44"], ["This Song", "3:33"], ["Vodka Cranberry", "4:05"], ["Romeo", "3:32"], ["My World", "3:44"], ["Class Clown", "3:17"], ["Nauseous", "3:43"], ["Caramel", "3:54"], ["Connell", "3:32"], ["Sunset Tower", "3:18"], ["Eleven Eleven", "3:29"], ["Care", "3:28"]]}, {"id": "wishbone-deluxe", "title": "Wishbone Deluxe", "year": "2026", "kind": "Deluxe album", "theme": "deluxe", "spotify": "https://open.spotify.com/album/18BxfsH93SUb77MlISUt60", "embed": "https://open.spotify.com/embed/album/01FqYKXIKnGNh2dqdB4fjD?utm_source=generator", "note": "Wishbone udvidet med fem nye sange — den nyeste albumfane på siden.", "tracks": [["Actor", "3:44"], ["This Song", "3:33"], ["Vodka Cranberry", "4:05"], ["Romeo", "3:32"], ["My World", "3:44"], ["Class Clown", "3:17"], ["Nauseous", "3:43"], ["Caramel", "3:54"], ["Connell", "3:32"], ["Sunset Tower", "3:18"], ["Eleven Eleven", "3:29"], ["Care", "3:28"], ["Do I Dare", "3:43"], ["House That Always Rains", "3:35"], ["Door", "3:54"], ["Moths", "3:04"], ["The Best", "3:48"]]}];
+const directMusicYouTube = {"Idle Town": "https://www.youtube.com/watch?v=BI5_hpUxDrM", "Heather": "https://www.youtube.com/watch?v=24u3NoPvgMw", "Maniac": "https://www.youtube.com/watch?v=-E-_IRJU5w0", "Memories": "https://www.youtube.com/watch?v=2lSyHZLzNYA", "Yours": "https://www.youtube.com/watch?v=W5vz8kMxx4A", "Alley Rose": "https://www.youtube.com/watch?v=M6dsZ_2v40s", "Never Ending Song": "https://www.youtube.com/watch?v=a0q6JMuLBYQ", "This Song": "https://www.youtube.com/watch?v=qgFNCy6u4UQ", "Vodka Cranberry": "https://www.youtube.com/watch?v=Yzbvv8WdP9k", "Caramel": "https://www.youtube.com/watch?v=hYZk9Xz25AQ"};
+
+function musicKey(albumTitle, trackTitle) {
+  return `${albumTitle}::${trackTitle}`;
+}
+
+function youtubeLinkFor(trackTitle) {
+  if (directMusicYouTube[trackTitle]) return directMusicYouTube[trackTitle];
+  return `https://www.youtube.com/results?search_query=${encodeURIComponent(`Conan Gray ${trackTitle} official`)}`;
+}
+
+function spotifySearchFor(trackTitle) {
+  return `https://open.spotify.com/search/${encodeURIComponent(`Conan Gray ${trackTitle}`)}`;
+}
+
+function saveMusicFavorites() {
+  localStorage.setItem("milaMusicFavorites", JSON.stringify(state.musicFavorites));
+}
+
+function toggleMusicFavorite(albumTitle, trackTitle) {
+  const key = musicKey(albumTitle, trackTitle);
+  const existing = state.musicFavorites.findIndex(item => item.key === key);
+
+  if (existing >= 0) {
+    state.musicFavorites.splice(existing, 1);
+    showToast("Fjernet fra Milas top 5");
+  } else {
+    if (state.musicFavorites.length >= 5) {
+      showToast("Milas top 5 er fuld — fjern først en anden sang");
+      return;
+    }
+    state.musicFavorites.push({ key, album: albumTitle, title: trackTitle });
+    showToast("Gemt i Milas top 5");
+  }
+
+  saveMusicFavorites();
+  renderMusicAlbum();
+  renderMusicFavorites();
+}
+
+function renderMusicFavorites() {
+  const list = $("#musicFavoritesList");
+  const hint = $("#musicFavoriteHint");
+  if (!list) return;
+
+  if (!state.musicFavorites.length) {
+    list.innerHTML = '<p class="empty-music-favorites">Ingen sange gemt endnu.</p>';
+    if (hint) hint.hidden = false;
+    return;
+  }
+
+  if (hint) hint.hidden = true;
+  list.innerHTML = state.musicFavorites.map((item, index) => `
+    <article class="music-favorite-row">
+      <span>${index + 1}</span>
+      <div>
+        <strong>${escapeHtml(item.title)}</strong>
+        <small>${escapeHtml(item.album)}</small>
+      </div>
+      <button data-remove-music-favorite="${escapeHtml(item.key)}" aria-label="Fjern ${escapeHtml(item.title)}">×</button>
+    </article>
+  `).join("");
+
+  $$("[data-remove-music-favorite]").forEach(button => button.addEventListener("click", () => {
+    state.musicFavorites = state.musicFavorites.filter(item => item.key !== button.dataset.removeMusicFavorite);
+    saveMusicFavorites();
+    renderMusicFavorites();
+    renderMusicAlbum();
+  }));
+}
+
+function renderMusicAlbum() {
+  const panel = $("#musicAlbumPanel");
+  if (!panel) return;
+
+  const album = musicAlbums.find(item => item.id === state.activeMusicAlbum) || musicAlbums[0];
+
+  panel.className = `music-album-panel theme-${album.theme}`;
+  panel.innerHTML = `
+    <div class="music-album-header">
+      <div>
+        <span class="eyebrow">${escapeHtml(album.kind)} · ${escapeHtml(album.year)}</span>
+        <h3>${escapeHtml(album.title)}</h3>
+        <p>${escapeHtml(album.note)}</p>
+        <div class="button-row compact-row">
+          <a class="primary compact link-button" href="${album.spotify}" target="_blank" rel="noopener noreferrer">Åbn albummet på Spotify ↗</a>
+          <a class="secondary compact link-button" href="https://www.youtube.com/results?search_query=${encodeURIComponent(`Conan Gray ${album.title} official playlist`)}" target="_blank" rel="noopener noreferrer">Find albummet på YouTube ↗</a>
+        </div>
+      </div>
+      <div class="album-number">${String(musicAlbums.indexOf(album) + 1).padStart(2, "0")}</div>
+    </div>
+
+    <div class="music-album-layout">
+      <div class="spotify-embed-wrap">
+        <iframe
+          title="${escapeHtml(album.title)} på Spotify"
+          src="${album.embed}"
+          width="100%"
+          height="420"
+          frameborder="0"
+          allowfullscreen=""
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy"></iframe>
+      </div>
+
+      <div class="track-list-wrap">
+        <div class="track-list-heading">
+          <strong>Trackliste</strong>
+          <span>${album.tracks.length} sange</span>
+        </div>
+        <ol class="music-track-list">
+          ${album.tracks.map((track, index) => {
+            const title = track[0];
+            const duration = track[1];
+            const key = musicKey(album.title, title);
+            const favorite = state.musicFavorites.some(item => item.key === key);
+            return `
+              <li>
+                <span class="track-number">${String(index + 1).padStart(2, "0")}</span>
+                <div class="track-name">
+                  <strong>${escapeHtml(title)}</strong>
+                  <small>${escapeHtml(duration)}</small>
+                </div>
+                <div class="track-actions">
+                  <button class="track-heart ${favorite ? "active" : ""}"
+                          data-music-favorite-album="${escapeHtml(album.title)}"
+                          data-music-favorite-title="${escapeHtml(title)}"
+                          aria-label="${favorite ? "Fjern" : "Gem"} ${escapeHtml(title)}">${favorite ? "♥" : "♡"}</button>
+                  <a href="${youtubeLinkFor(title)}" target="_blank" rel="noopener noreferrer">YouTube</a>
+                  <a href="${spotifySearchFor(title)}" target="_blank" rel="noopener noreferrer">Spotify</a>
+                </div>
+              </li>
+            `;
+          }).join("")}
+        </ol>
+      </div>
+    </div>
+  `;
+
+  $$("[data-music-favorite-title]").forEach(button => button.addEventListener("click", () => {
+    toggleMusicFavorite(button.dataset.musicFavoriteAlbum, button.dataset.musicFavoriteTitle);
+  }));
+}
+
+$("#musicAlbumTabs")?.addEventListener("click", event => {
+  const button = event.target.closest("[data-music-album]");
+  if (!button) return;
+
+  state.activeMusicAlbum = button.dataset.musicAlbum;
+  $$(".music-album-tab").forEach(tab => tab.classList.toggle("active", tab === button));
+  renderMusicAlbum();
+  $("#musicAlbumPanel")?.scrollIntoView({ behavior: "smooth", block: "start" });
+});
+
+
 // Startup
 const initialRoute = location.hash.replace("#", "");
-routeTo(["home", "conan", "print", "quiz", "private"].includes(initialRoute) ? initialRoute : "home");
+routeTo(["home", "conan", "music", "print", "quiz", "private"].includes(initialRoute) ? initialRoute : "home");
 renderPrintSheet();
 renderPlayers();
 renderNotes();
 renderHeroArchive();
 renderGallery();
+renderMusicAlbum();
+renderMusicFavorites();
 
 setTimeout(() => {
   if (!sessionStorage.getItem("milaWelcome")) {

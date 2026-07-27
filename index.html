@@ -15,7 +15,7 @@
       <span class="brand-mark">M</span>
       <span>
         <strong>Milas Conan-univers</strong>
-        <small>Fødselsdagsudgave · musik + galleri v0.9</small>
+        <small>Fødselsdagsudgave · musikside v0.10</small>
       </span>
     </a>
 
@@ -24,6 +24,7 @@
     <nav id="mainNav" class="main-nav" aria-label="Hovedmenu">
       <button data-route="home">Forside</button>
       <button data-route="conan">Conan</button>
+      <button data-route="music">Musik</button>
       <button data-route="print">Printstudie</button>
       <button data-route="quiz">Livequiz</button>
       <button data-route="private">Mit univers</button>
@@ -75,6 +76,11 @@
           <strong>Conan-universet</strong>
           <small>Historie, album og æraer</small>
         </button>
+        <button class="door music-door" data-route="music">
+          <span class="door-icon">♪</span>
+          <strong>Lyt til Conan</strong>
+          <small>Albumfaner, sanglister og top 5</small>
+        </button>
         <button class="door" data-route="print">
           <span class="door-icon">▧</span>
           <strong>Printstudiet</strong>
@@ -113,7 +119,7 @@
           <h3>Et sted til billeder, musik og print</h3>
           <p>Før vi kobler alt live sammen med Firebase, gør vi Conan-universet mere “rigtigt”: galleri, æra-farver, favoritter og printvenlige motiver, så siden føles som Milas eget lille fan-arkiv.</p>
           <div class="button-row compact-row">
-            <button class="primary" id="jumpToMusic">Lyt til musikken ♪</button>
+            <button class="primary" data-route="music">Åbn musiksiden ♪</button>
             <button class="secondary" id="jumpToGallery">Hop til galleriet</button>
           </div>
           <div class="quick-facts">
@@ -316,6 +322,46 @@
         <p>Motiverne i denne version er originale AI-genererede fanillustrationer lavet til Milas Conan-univers. De er uofficielle og må ikke præsenteres som autentiske fotografier eller officielt Conan Gray-materiale.</p>
       </aside>
     </section>
+
+
+    <section id="music" class="view music-view">
+      <div class="section-heading">
+        <span class="eyebrow">Milas musikbibliotek</span>
+        <h2>Lyt til Conan — æra for æra</h2>
+        <p>Vælg et album, afspil det på Spotify, åbn sangene på YouTube og gem Milas egne favoritter. Musikken afspilles fra de officielle tjenester og ligger ikke på hjemmesiden.</p>
+      </div>
+
+      <section class="music-page-hero">
+        <div class="music-page-copy">
+          <span class="eyebrow">Nu med seks faner</span>
+          <h3>Fra <em>Sunset Season</em> til <em>Wishbone Deluxe</em></h3>
+          <p>Hver fane har komplet trackliste, officiel Spotify-afspiller og links til YouTube. Hjerterne gemmes kun i denne browser.</p>
+          <div class="music-stat-row">
+            <article><strong>6</strong><span>albumfaner</span></article>
+            <article><strong>71</strong><span>trackplaceringer</span></article>
+            <article><strong>5</strong><span>pladser i Milas top 5</span></article>
+          </div>
+        </div>
+        <div class="music-top-five">
+          <span class="eyebrow">Mila’s top 5</span>
+          <h3>Favoritsangene</h3>
+          <div id="musicFavoritesList"></div>
+          <p id="musicFavoriteHint" class="small-note">Tryk på hjertet ved en sang for at gemme den her.</p>
+        </div>
+      </section>
+
+      <div class="music-album-tabs" id="musicAlbumTabs" role="tablist" aria-label="Vælg Conan-album">
+        <button class="music-album-tab active" data-music-album="sunset"><span>2018</span>Sunset Season</button><button class="music-album-tab" data-music-album="kid"><span>2020</span>Kid Krow</button><button class="music-album-tab" data-music-album="superache"><span>2022</span>Superache</button><button class="music-album-tab" data-music-album="heaven"><span>2024</span>Found Heaven</button><button class="music-album-tab" data-music-album="wishbone"><span>2025</span>Wishbone</button><button class="music-album-tab" data-music-album="wishbone-deluxe"><span>2026</span>Wishbone Deluxe</button>
+      </div>
+
+      <section id="musicAlbumPanel" class="music-album-panel" aria-live="polite"></section>
+
+      <aside class="source-note">
+        <strong>Musikken åbnes hos de officielle tjenester</strong>
+        <p>Spotify-afspilleren og knapperne kræver internet. Enkelte fulde afspilninger kan kræve, at Mila er logget ind hos Spotify eller YouTube.</p>
+      </aside>
+    </section>
+
 
     <section id="print" class="view">
       <div class="section-heading">
