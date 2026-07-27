@@ -11,7 +11,7 @@ const state = {
   timeLeft: 15,
   answered: false,
   notes: JSON.parse(localStorage.getItem("milaNotes") || "[]"),
-  galleryFilter: "alle",
+  galleryFilter: "bedste",
   favoriteGallery: new Set(JSON.parse(localStorage.getItem("milaGalleryFavorites") || "[\"Kid Krow Star Guitar\", \"Wishbone Blue\", \"Superache Roses\"]")),
   currentGalleryItem: null,
   galleryLimit: 12
@@ -1085,8 +1085,16 @@ function saveFavoriteGallery() {
 }
 
 function filteredGalleryItems() {
+  if (state.galleryFilter === "bedste") {
+    return galleryItems.filter(item => item.quality !== "mini");
+  }
   if (state.galleryFilter === "alle") return galleryItems;
-  if (state.galleryFilter === "favoritter") return galleryItems.filter(item => state.favoriteGallery.has(item.title));
+  if (state.galleryFilter === "mini") {
+    return galleryItems.filter(item => item.quality === "mini");
+  }
+  if (state.galleryFilter === "favoritter") {
+    return galleryItems.filter(item => state.favoriteGallery.has(item.title));
+  }
   return galleryItems.filter(item => item.era === state.galleryFilter);
 }
 
@@ -1226,6 +1234,10 @@ $("#randomGallery")?.addEventListener("click", () => {
   const choices = filteredGalleryItems();
   if (!choices.length) return;
   openGalleryItem(choices[Math.floor(Math.random() * choices.length)].title);
+});
+
+$("#jumpToMusic")?.addEventListener("click", () => {
+  $("#musicAnchor")?.scrollIntoView({ behavior: "smooth", block: "start" });
 });
 
 $("#jumpToGallery")?.addEventListener('click', () => {

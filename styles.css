@@ -1097,3 +1097,98 @@ footer {
     min-height: 390px;
   }
 }
+
+
+/* v0.9 – music library */
+.music-library {
+  margin: 0 0 1.7rem;
+  padding: 1.1rem;
+  border-radius: 1.2rem;
+  background: rgba(255,255,255,.64);
+  box-shadow: 0 12px 32px rgba(23,19,31,.08);
+}
+.official-channel-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: .65rem .9rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--ink);
+  background: rgba(255,255,255,.86);
+  font-size: .82rem;
+  font-weight: 800;
+  text-decoration: none;
+}
+.official-channel-link:hover,
+.music-card a:hover {
+  transform: translateY(-1px);
+}
+.music-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .8rem;
+  margin-top: 1rem;
+}
+.music-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 225px;
+  padding: 1rem;
+  border-radius: 1rem;
+  color: white;
+  box-shadow: 0 9px 22px rgba(23,19,31,.11);
+}
+.music-card h4 {
+  margin: .38rem 0 .4rem;
+  font-family: "Playfair Display", serif;
+  font-size: 1.55rem;
+}
+.music-card p {
+  flex: 1;
+  margin: 0 0 .8rem;
+  font-size: .84rem;
+  line-height: 1.48;
+  opacity: .86;
+}
+.music-era {
+  font-size: .68rem;
+  font-weight: 900;
+  letter-spacing: .11em;
+  text-transform: uppercase;
+  opacity: .78;
+}
+.music-card a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 2.55rem;
+  padding: .55rem .7rem;
+  border: 1px solid rgba(255,255,255,.42);
+  border-radius: .75rem;
+  color: white;
+  background: rgba(0,0,0,.22);
+  font-size: .78rem;
+  font-weight: 900;
+  text-decoration: none;
+  transition: transform .18s ease;
+}
+.sunset-music { background: linear-gradient(150deg, #b34e35, #59385f 80%); }
+.kid-music { background: linear-gradient(150deg, #111217, #55505b 82%); }
+.super-music { background: linear-gradient(150deg, #7d1830, #ca4f67 82%); }
+.heaven-music { color: #211b12; background: linear-gradient(150deg, #f4d956, #da8c31 82%); }
+.heaven-music a {
+  color: #211b12;
+  border-color: rgba(33,27,18,.32);
+  background: rgba(255,255,255,.35);
+}
+.wishbone-music { background: linear-gradient(150deg, #234a78, #6d99c8 82%); }
+
+@media (max-width: 1100px) {
+  .music-grid { grid-template-columns: repeat(3, 1fr); }
+}
+@media (max-width: 720px) {
+  .music-grid { grid-template-columns: 1fr; }
+  .music-card { min-height: 190px; }
+  .music-library .subheading-row { align-items: stretch; flex-direction: column; }
+}

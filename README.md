@@ -1,3 +1,18 @@
+# Milas Conan-univers v0.9 — musiklinks
+
+Nyt i v0.9:
+
+- 10 direkte links til officielle Conan Gray-videoer på YouTube
+- en samlet “Lyt til Conan”-sektion
+- link til Conans officielle YouTube-kanal
+- galleriet åbner på “Bedste kvalitet”
+- MINI-billederne er stadig tilgængelige under “Miniarkiv”
+- “Alle” viser fortsat hele samlingen
+
+Musikken hostes ikke på GitHub-siden. Knapperne åbner officielle YouTube-sider i en ny fane.
+
+---
+
 # Milas Conan-univers v0.8 — skarphedsrettelse
 
 Denne version retter forskellen mellem de oprindelige højopløselige billeder og de mindre billeder, der blev beskåret fra samlede billedvægge.

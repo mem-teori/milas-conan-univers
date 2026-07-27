@@ -15,7 +15,7 @@
       <span class="brand-mark">M</span>
       <span>
         <strong>Milas Conan-univers</strong>
-        <small>Fødselsdagsudgave · billedgalleri v0.8</small>
+        <small>Fødselsdagsudgave · musik + galleri v0.9</small>
       </span>
     </a>
 
@@ -97,7 +97,7 @@
       <div class="section-heading">
         <span class="eyebrow">Conan archive</span>
         <h2>Conan Gray — billeder, æraer og favoritter</h2>
-        <p>Her er v0.3 af Conan-delen: mere visuelt archive-look, tydelige albumæraer, et større galleri og plads til Milas favoritter. Motiverne her er stadig designpladsholdere og fan-grafik, indtil vi vælger de endelige Conan-billeder.</p>
+        <p>Milas Conan-arkiv samler musik, æraer, fanillustrationer, favoritter og print. Galleriet åbner nu med de bedste billedkilder først, mens hele miniarkivet stadig kan vælges.</p>
       </div>
 
       <section class="archive-hero">
@@ -113,7 +113,7 @@
           <h3>Et sted til billeder, musik og print</h3>
           <p>Før vi kobler alt live sammen med Firebase, gør vi Conan-universet mere “rigtigt”: galleri, æra-farver, favoritter og printvenlige motiver, så siden føles som Milas eget lille fan-arkiv.</p>
           <div class="button-row compact-row">
-            <button class="primary" data-route="print">Åbn printstudiet</button>
+            <button class="primary" id="jumpToMusic">Lyt til musikken ♪</button>
             <button class="secondary" id="jumpToGallery">Hop til galleriet</button>
           </div>
           <div class="quick-facts">
@@ -165,6 +165,109 @@
         </div>
       </section>
 
+
+      <section class="music-library" id="musicAnchor">
+        <div class="subheading-row">
+          <div>
+            <span class="eyebrow">Lyt til Conan</span>
+            <h3>Sange fra hver æra</h3>
+          </div>
+          <a class="official-channel-link"
+             href="https://www.youtube.com/channel/UCUKxvWVo8lmRXkbTOkqUhGg"
+             target="_blank"
+             rel="noopener noreferrer">
+            Åbn Conans officielle YouTube-kanal ↗
+          </a>
+        </div>
+
+        <p class="small-note">
+          Sangene åbner i en ny fane på Conans officielle YouTube-kanal eller officielle artistvideoer.
+          Selve musikken ligger derfor ikke gemt på Milas hjemmeside.
+        </p>
+
+        <div class="music-grid">
+          <article class="music-card sunset-music">
+            <span class="music-era">Sunset Season</span>
+            <h4>Idle Town</h4>
+            <p>Den tidlige sang, der blev en vigtig del af begyndelsen.</p>
+            <a href="https://www.youtube.com/watch?v=BI5_hpUxDrM"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card kid-music">
+            <span class="music-era">Kid Krow</span>
+            <h4>Heather</h4>
+            <p>Et af de mest kendte numre fra debutalbummet.</p>
+            <a href="https://www.youtube.com/watch?v=24u3NoPvgMw"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card kid-music">
+            <span class="music-era">Kid Krow</span>
+            <h4>Maniac</h4>
+            <p>Mere energi, drama og et stort visuelt musikvideo-univers.</p>
+            <a href="https://www.youtube.com/watch?v=-E-_IRJU5w0"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card super-music">
+            <span class="music-era">Superache</span>
+            <h4>Memories</h4>
+            <p>En af de store følelsesladede sange fra Superache.</p>
+            <a href="https://www.youtube.com/watch?v=2lSyHZLzNYA"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card super-music">
+            <span class="music-era">Superache</span>
+            <h4>Yours</h4>
+            <p>En roligere og mere sårbar sang fra samme æra.</p>
+            <a href="https://www.youtube.com/watch?v=W5vz8kMxx4A"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card heaven-music">
+            <span class="music-era">Found Heaven</span>
+            <h4>Alley Rose</h4>
+            <p>Et dramatisk nummer fra den mere retroprægede periode.</p>
+            <a href="https://www.youtube.com/watch?v=M6dsZ_2v40s"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card heaven-music">
+            <span class="music-era">Found Heaven</span>
+            <h4>Never Ending Song</h4>
+            <p>Retro-pop, bevægelse og Found Heaven-farver.</p>
+            <a href="https://www.youtube.com/watch?v=a0q6JMuLBYQ"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card wishbone-music">
+            <span class="music-era">Wishbone</span>
+            <h4>This Song</h4>
+            <p>En central sang fra Wishbone-perioden.</p>
+            <a href="https://www.youtube.com/watch?v=qgFNCy6u4UQ"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card wishbone-music">
+            <span class="music-era">Wishbone</span>
+            <h4>Vodka Cranberry</h4>
+            <p>Et af de store officielle musikvideonumre fra æraen.</p>
+            <a href="https://www.youtube.com/watch?v=Yzbvv8WdP9k"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+
+          <article class="music-card wishbone-music">
+            <span class="music-era">Wishbone</span>
+            <h4>Caramel</h4>
+            <p>Endnu et officielt Wishbone-musikvideolink.</p>
+            <a href="https://www.youtube.com/watch?v=hYZk9Xz25AQ"
+               target="_blank" rel="noopener noreferrer">Lyt på YouTube ▶</a>
+          </article>
+        </div>
+      </section>
+
       <section class="favorites-spotlight">
         <div class="subheading-row">
           <div>
@@ -183,7 +286,9 @@
             <h3>Conan-billedvæg</h3>
           </div>
           <div class="gallery-controls" id="galleryFilters">
-            <button class="active" data-gallery-filter="alle">Alle</button>
+            <button class="active" data-gallery-filter="bedste">Bedste kvalitet</button>
+            <button data-gallery-filter="alle">Alle</button>
+            <button data-gallery-filter="mini">Miniarkiv</button>
             <button data-gallery-filter="Sunset Season">Sunset Season</button>
             <button data-gallery-filter="Kid Krow">Kid Krow</button>
             <button data-gallery-filter="Superache">Superache</button>
@@ -195,7 +300,7 @@
             <button data-gallery-filter="favoritter">Favoritter</button>
           </div>
         </div>
-        <p class="small-note"><strong>Uofficiel fanside:</strong> Galleriet rummer 65 Conan-inspirerede motiver med HD- og miniarkiv-mærkning. De er AI-genererede fanillustrationer, ikke ægte fotografier. Klik på et motiv for at åbne det stort, gemme det som favorit eller sende det til printarket.</p>
+        <p class="small-note"><strong>Uofficiel fanside:</strong> Galleriet rummer 65 Conan-inspirerede motiver. Siden viser de skarpeste kilder først; MINI-billederne findes fortsat under Miniarkiv. De er AI-genererede fanillustrationer, ikke ægte fotografier. Klik på et motiv for at åbne det stort, gemme det som favorit eller sende det til printarket.</p>
         <div id="galleryGrid" class="gallery-grid"></div>
         <div class="gallery-load-controls">
           <span id="galleryCount" class="small-note"></span>
