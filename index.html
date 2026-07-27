@@ -15,7 +15,7 @@
       <span class="brand-mark">M</span>
       <span>
         <strong>Milas Conan-univers</strong>
-        <small>Fødselsdagsudgave · musikside v0.10</small>
+        <small>Fødselsdagsudgave · Mila-preview v0.11</small>
       </span>
     </a>
 
@@ -25,6 +25,7 @@
       <button data-route="home">Forside</button>
       <button data-route="conan">Conan</button>
       <button data-route="music">Musik</button>
+      <button class="mila-input-nav" data-route="feedback">Mit input</button>
       <button data-route="print">Printstudie</button>
       <button data-route="quiz">Livequiz</button>
       <button data-route="private">Mit univers</button>
@@ -44,6 +45,16 @@
           <button class="primary" data-route="quiz">Start Conan-quizzen</button>
           <button class="secondary" data-route="print">Lav et printark</button>
         </div>
+
+        <div class="mila-preview-banner">
+          <span class="preview-spark">✦</span>
+          <div>
+            <strong>Hej Mila — denne side er lavet til dig</strong>
+            <p>Prøv det hele, gem dine favoritter og brug <b>Mit input</b>, når der er noget, du vil ændre, tilføje eller gøre mere Conan-agtigt.</p>
+          </div>
+          <button class="secondary compact" data-route="feedback">Giv dit input</button>
+        </div>
+
         <div class="mini-note">
           <span>★</span>
           <p><strong>Prøveudkast:</strong> Alt på denne side virker lokalt i browseren. Rigtig livequiz og sikkert login kobles på i den færdige udgave.</p>
@@ -363,6 +374,102 @@
     </section>
 
 
+
+    <section id="feedback" class="view feedback-view">
+      <div class="section-heading">
+        <span class="eyebrow">Mila bestemmer næste version</span>
+        <h2>Mit input til siden</h2>
+        <p>Her kan du fortælle, hvad du elsker, hvad der mangler, og hvad vi skal ændre. Alt gemmes kun lokalt i denne browser, indtil du vælger at kopiere eller hente det.</p>
+      </div>
+
+      <section class="feedback-intro">
+        <div>
+          <span class="eyebrow">Ingen forkerte svar</span>
+          <h3>Det skal føles som <em>dit</em> Conan-univers</h3>
+          <p>Du må gerne være helt ærlig. Skriv også de skøre idéer — de er ofte dem, der gør siden særlig.</p>
+        </div>
+        <div class="feedback-progress">
+          <strong id="feedbackAnswered">0</strong>
+          <span>områder med input</span>
+        </div>
+      </section>
+
+      <div class="feedback-grid">
+        <article class="feedback-card" data-feedback-area="Forsiden">
+          <header><span>01</span><h3>Forsiden</h3></header>
+          <p>Føles den som noget, du har lyst til at gå på opdagelse i?</p>
+          <div class="emoji-rating" aria-label="Vurder forsiden">
+            <button data-rating="1">😕</button><button data-rating="2">🙂</button><button data-rating="3">😍</button>
+          </div>
+          <textarea placeholder="Hvad skal ændres på forsiden?"></textarea>
+        </article>
+
+        <article class="feedback-card" data-feedback-area="Conan og billeder">
+          <header><span>02</span><h3>Conan og billeder</h3></header>
+          <p>Er der nok billeder, og passer stemningen til Conan?</p>
+          <div class="emoji-rating">
+            <button data-rating="1">😕</button><button data-rating="2">🙂</button><button data-rating="3">😍</button>
+          </div>
+          <textarea placeholder="Hvilke billeder eller æraer mangler?"></textarea>
+        </article>
+
+        <article class="feedback-card" data-feedback-area="Musikken">
+          <header><span>03</span><h3>Musikken</h3></header>
+          <p>Er albumfanerne og sangknapperne nemme og sjove at bruge?</p>
+          <div class="emoji-rating">
+            <button data-rating="1">😕</button><button data-rating="2">🙂</button><button data-rating="3">😍</button>
+          </div>
+          <textarea placeholder="Hvilke sange, lister eller musikfunktioner vil du have?"></textarea>
+        </article>
+
+        <article class="feedback-card" data-feedback-area="Printstudiet">
+          <header><span>04</span><h3>Printstudiet</h3></header>
+          <p>Hvad vil du gerne kunne lave og printe?</p>
+          <div class="emoji-rating">
+            <button data-rating="1">😕</button><button data-rating="2">🙂</button><button data-rating="3">😍</button>
+          </div>
+          <textarea placeholder="Plakater, polaroids, collager, kort eller noget helt andet?"></textarea>
+        </article>
+
+        <article class="feedback-card" data-feedback-area="Quizzen">
+          <header><span>05</span><h3>Quizzen</h3></header>
+          <p>Hvordan skal Conan-quizzen føles, når vennerne spiller med?</p>
+          <div class="emoji-rating">
+            <button data-rating="1">😕</button><button data-rating="2">🙂</button><button data-rating="3">😍</button>
+          </div>
+          <textarea placeholder="Flere spørgsmål, musikklip, sværhedsgrader eller andre idéer?"></textarea>
+        </article>
+
+        <article class="feedback-card" data-feedback-area="Mit univers">
+          <header><span>06</span><h3>Mit univers</h3></header>
+          <p>Hvad skal den personlige og private del kunne?</p>
+          <div class="emoji-rating">
+            <button data-rating="1">😕</button><button data-rating="2">🙂</button><button data-rating="3">😍</button>
+          </div>
+          <textarea placeholder="Familie, minder, idébog, projekter eller noget nyt?"></textarea>
+        </article>
+      </div>
+
+      <section class="big-idea-card">
+        <span class="eyebrow">Den helt frie idé</span>
+        <h3>Hvis siden kunne gøre hvad som helst…</h3>
+        <textarea id="milaBigIdea" placeholder="Skriv den idé, du ville blive mest glad for at se på siden — også selv om du ikke ved, om den kan laves."></textarea>
+      </section>
+
+      <section class="feedback-actions-panel">
+        <div>
+          <strong id="feedbackSaveStatus">Dit input gemmes automatisk i denne browser.</strong>
+          <p class="small-note">Brug “Hent mit input”, hvis du vil gemme en tekstfil, vi kan arbejde videre fra i aften.</p>
+        </div>
+        <div class="button-row compact-row">
+          <button id="copyMilaFeedback" class="secondary">Kopiér mit input</button>
+          <button id="downloadMilaFeedback" class="primary">Hent mit input</button>
+          <button id="clearMilaFeedback" class="ghost-button">Nulstil</button>
+        </div>
+      </section>
+    </section>
+
+
     <section id="print" class="view">
       <div class="section-heading">
         <span class="eyebrow">Printstudiet</span>
@@ -655,6 +762,12 @@
       </div>
     </div>
   </div>
+
+  
+  <button id="floatingMilaInput" class="floating-mila-input" data-route="feedback">
+    <span>✎</span>
+    <strong>Mit input</strong>
+  </button>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
 

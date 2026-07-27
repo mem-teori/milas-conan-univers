@@ -1,3 +1,22 @@
+# Milas Conan-univers v0.11 — Mila-preview
+
+Denne version er lavet til den første fremvisning for Mila.
+
+Nyt:
+
+- personlig velkomst på forsiden
+- “Mit input” i hovedmenuen
+- flydende feedbackknap på alle sider
+- vurdering af seks dele af hjemmesiden
+- fritekstfelter til konkrete ændringer og idéer
+- en helt fri “Hvis siden kunne gøre hvad som helst…”-idé
+- automatisk lokal lagring
+- kopiering af feedback
+- download af `Milas_input_til_Conan-universet.txt`
+- Milas top 5-sange kommer med i den eksporterede feedback
+
+---
+
 # Milas Conan-univers v0.10 — fuld musikside
 
 Nyt i v0.10:

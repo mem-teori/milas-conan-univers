@@ -16,7 +16,8 @@ const state = {
   currentGalleryItem: null,
   galleryLimit: 12,
   activeMusicAlbum: "sunset",
-  musicFavorites: JSON.parse(localStorage.getItem("milaMusicFavorites") || "[]")
+  musicFavorites: JSON.parse(localStorage.getItem("milaMusicFavorites") || "[]"),
+  milaFeedback: JSON.parse(localStorage.getItem("milaSiteFeedback") || "{}")
 };
 
 const quizQuestions = [
@@ -393,6 +394,7 @@ renderHeroArchive();
 renderGallery();
 renderMusicAlbum();
 renderMusicFavorites();
+renderMilaFeedback();
   showToast("Tanken er fanget");
 });
 
@@ -438,6 +440,7 @@ renderHeroArchive();
 renderGallery();
 renderMusicAlbum();
 renderMusicFavorites();
+renderMilaFeedback();
   }));
   $$("[data-promote]").forEach(button => button.addEventListener("click", () => {
     const note = state.notes.find(n => n.id === button.dataset.promote);
@@ -448,6 +451,7 @@ renderHeroArchive();
 renderGallery();
 renderMusicAlbum();
 renderMusicFavorites();
+renderMilaFeedback();
     showToast(note?.project ? "Flyttet til Projektbordet" : "Fjernet fra Projektbordet");
   }));
 }
@@ -1302,6 +1306,7 @@ function toggleMusicFavorite(albumTitle, trackTitle) {
   saveMusicFavorites();
   renderMusicAlbum();
   renderMusicFavorites();
+renderMilaFeedback();
 }
 
 function renderMusicFavorites() {
@@ -1331,6 +1336,7 @@ function renderMusicFavorites() {
     state.musicFavorites = state.musicFavorites.filter(item => item.key !== button.dataset.removeMusicFavorite);
     saveMusicFavorites();
     renderMusicFavorites();
+renderMilaFeedback();
     renderMusicAlbum();
   }));
 }
@@ -1419,9 +1425,131 @@ $("#musicAlbumTabs")?.addEventListener("click", event => {
 });
 
 
+
+const feedbackLabels = {
+  1: "Skal ændres",
+  2: "Godt på vej",
+  3: "Elsker det"
+};
+
+function saveMilaFeedback() {
+  localStorage.setItem("milaSiteFeedback", JSON.stringify(state.milaFeedback));
+  const status = $("#feedbackSaveStatus");
+  if (status) status.textContent = "Gemt automatisk ✓";
+  updateFeedbackProgress();
+}
+
+function updateFeedbackProgress() {
+  const areas = $$(".feedback-card");
+  const answered = areas.filter(card => {
+    const entry = state.milaFeedback[card.dataset.feedbackArea] || {};
+    return Boolean(entry.rating || entry.note?.trim());
+  }).length;
+  const count = $("#feedbackAnswered");
+  if (count) count.textContent = answered;
+}
+
+function renderMilaFeedback() {
+  $$(".feedback-card").forEach(card => {
+    const area = card.dataset.feedbackArea;
+    const entry = state.milaFeedback[area] || {};
+    const textarea = card.querySelector("textarea");
+
+    if (textarea) textarea.value = entry.note || "";
+    card.querySelectorAll("[data-rating]").forEach(button => {
+      button.classList.toggle("active", Number(button.dataset.rating) === Number(entry.rating));
+    });
+  });
+
+  const bigIdea = $("#milaBigIdea");
+  if (bigIdea) bigIdea.value = state.milaFeedback.__bigIdea || "";
+  updateFeedbackProgress();
+}
+
+function feedbackAsText() {
+  const lines = [
+    "MILAS INPUT TIL CONAN-UNIVERSET",
+    `Gemt: ${new Intl.DateTimeFormat("da-DK", { dateStyle: "long", timeStyle: "short" }).format(new Date())}`,
+    ""
+  ];
+
+  $$(".feedback-card").forEach(card => {
+    const area = card.dataset.feedbackArea;
+    const entry = state.milaFeedback[area] || {};
+    lines.push(area.toUpperCase());
+    lines.push(`Vurdering: ${entry.rating ? feedbackLabels[entry.rating] : "Ikke valgt"}`);
+    lines.push(`Kommentar: ${entry.note?.trim() || "Ingen kommentar"}`);
+    lines.push("");
+  });
+
+  lines.push("DEN HELT FRIE IDÉ");
+  lines.push(state.milaFeedback.__bigIdea?.trim() || "Ingen idé skrevet endnu");
+  lines.push("");
+  lines.push("MILAS TOP 5-SANGE");
+  if (state.musicFavorites.length) {
+    state.musicFavorites.forEach((item, index) => lines.push(`${index + 1}. ${item.title} — ${item.album}`));
+  } else {
+    lines.push("Ingen favoritsange gemt endnu");
+  }
+
+  return lines.join("\n");
+}
+
+$$(".feedback-card").forEach(card => {
+  const area = card.dataset.feedbackArea;
+  const textarea = card.querySelector("textarea");
+
+  card.querySelectorAll("[data-rating]").forEach(button => button.addEventListener("click", () => {
+    state.milaFeedback[area] ||= {};
+    state.milaFeedback[area].rating = Number(button.dataset.rating);
+    saveMilaFeedback();
+    renderMilaFeedback();
+  }));
+
+  textarea?.addEventListener("input", () => {
+    state.milaFeedback[area] ||= {};
+    state.milaFeedback[area].note = textarea.value;
+    saveMilaFeedback();
+  });
+});
+
+$("#milaBigIdea")?.addEventListener("input", event => {
+  state.milaFeedback.__bigIdea = event.target.value;
+  saveMilaFeedback();
+});
+
+$("#copyMilaFeedback")?.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(feedbackAsText());
+    showToast("Milas input er kopieret");
+  } catch {
+    showToast("Browseren kunne ikke kopiere — brug Hent mit input");
+  }
+});
+
+$("#downloadMilaFeedback")?.addEventListener("click", () => {
+  const blob = new Blob([feedbackAsText()], { type: "text/plain;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement("a");
+  link.href = url;
+  link.download = "Milas_input_til_Conan-universet.txt";
+  link.click();
+  URL.revokeObjectURL(url);
+  showToast("Milas input er hentet som tekstfil");
+});
+
+$("#clearMilaFeedback")?.addEventListener("click", () => {
+  if (!confirm("Vil du nulstille alt input på denne side?")) return;
+  state.milaFeedback = {};
+  localStorage.removeItem("milaSiteFeedback");
+  renderMilaFeedback();
+  showToast("Inputtet er nulstillet");
+});
+
+
 // Startup
 const initialRoute = location.hash.replace("#", "");
-routeTo(["home", "conan", "music", "print", "quiz", "private"].includes(initialRoute) ? initialRoute : "home");
+routeTo(["home", "conan", "music", "feedback", "print", "quiz", "private"].includes(initialRoute) ? initialRoute : "home");
 renderPrintSheet();
 renderPlayers();
 renderNotes();
@@ -1429,6 +1557,7 @@ renderHeroArchive();
 renderGallery();
 renderMusicAlbum();
 renderMusicFavorites();
+renderMilaFeedback();
 
 setTimeout(() => {
   if (!sessionStorage.getItem("milaWelcome")) {
