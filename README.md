@@ -1,20 +1,23 @@
-# Milas Conan-univers v0.4
+# Milas Conan-univers v0.5 — AI fan-art gallery
 
-Denne version er **klar til rigtige Conan-billeder**.
+This version integrates five original AI-generated Conan Gray-inspired fan images into:
 
-## Nyt i v0.4
-- projektet har nu en rigtig `images/`-mappestruktur
-- hero-sektionen er forberedt til et rigtigt Conan-billede
-- galleriet er forberedt til lokale billedstier
-- du kan nu begynde at lægge Conan-billeder direkte ind i projektet
+- the Conan archive hero;
+- the era gallery;
+- favourites;
+- the large image modal;
+- the print studio.
 
-## Læg billeder her
-- `images/hero/conan-hero.jpg`
-- `images/gallery/`
+The website clearly labels the images as unofficial AI-generated fan illustrations and not authentic photographs.
 
-Læs også `IMAGES_NOTE.md`.
+See `IMAGE_CREDITS.md`.
 
 ---
+
+# Milas Conan-univers v0.3
+
+Denne version udvider Conan-delen med galleri, æra-kort, favoritter og lysboksvisning.
+
 # Milas Conan-univers v0.2
 
 GitHub Pages-klar prøveudgave med:
